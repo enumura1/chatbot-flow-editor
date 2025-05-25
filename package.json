@@ -1,58 +1,23 @@
 {
   "name": "chatbot-flow-editor",
+  "version": "1.0.0",
+  "description": "A React-based chatbot flow editor library",
   "private": true,
-  "version": "0.0.0",
-  "description": "A visual chatbot flow editor for React applications",
-  "keywords": [
-    "chatbot",
-    "flow",
-    "editor",
-    "react",
-    "conversation"
+  "workspaces": [
+    "packages/*",
+    "apps/*"
   ],
-  "author": "enumura1",
-  "license": "MIT",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@radix-ui/react-dialog": "^1.1.7",
-    "@radix-ui/react-scroll-area": "^1.2.4",
-    "@radix-ui/react-slot": "^1.2.0",
-    "@tailwindcss/vite": "^4.1.7",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.487.0",
-    "next": "15.3.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.7",
-    "tw-animate-css": "^1.2.5"
+    "build": "npm run build --workspace=packages/core",
+    "dev": "npm run dev --workspace=apps/demo",
+    "build:core": "npm run build --workspace=packages/core",
+    "dev:demo": "npm run dev --workspace=apps/demo"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react-swc": "^3.9.0",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.30.1",
-    "vite": "^6.3.5"
+    "@types/node": "^22.0.0",
+    "typescript": "~5.6.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/enumura1/chatbot-flow-editor.git"
-  },
-  "bugs": {
-    "url": "https://github.com/enumura1/chatbot-flow-editor/issues"
-  },
-  "homepage": "https://github.com/your-username/chatbot-flow-editor#readme"
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

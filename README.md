@@ -1,54 +1,106 @@
-# React + TypeScript + Vite
+# Chatbot Flow Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React component for building chatbot conversation flows visually. Create complex conversational experiences with an intuitive node-based editor.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Visual Flow Builder**: Create conversation flows using a hierarchical tree structure
+- **Chat Preview**: Test your chatbot interactions instantly
+- **Node Management**: Add, edit, and organize conversation nodes
+- **Option System**: Define user choices and conversation branches
+- **Import/Export**: Save and load flows in JSON format
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Try the interactive demo to see all features in action
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. **Add Nodes**: Click "Add Node" to create new conversation points
+2. **Edit Content**: Click on any node to modify its content and options
+3. **Test Flow**: Use the chat preview to simulate user interactions
+4. **Export/Import**: Save your work or load existing flows
+
+## Installation
+
+```bash
+npm install chatbot-flow-editor
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Basic Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```tsx
+import { ChatbotEditor } from 'chatbot-flow-editor'
+import 'chatbot-flow-editor/styles'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+function App() {
+  return (
+    <div style={{ width: '100%', height: '100vh' }}>
+      <ChatbotEditor />
+    </div>
+  )
+}
 ```
+
+## Development
+
+This is a monorepo using npm workspaces
+
+```
+chatbot-flow-editor/
+├── packages/core/           # Main library source
+│   ├── src/
+│   │   ├── components/      # React components
+│   │   ├── types/          # TypeScript definitions
+│   │   └── index.ts        # Public API exports
+│   ├── vite.config.ts      # Library build config
+│   └── package.json        # Library dependencies
+├── apps/demo/              # Demo application
+│   ├── src/App.tsx         # Demo implementation
+│   └── vite.config.ts      # Demo app config
+└── package.json            # Workspace root
+```
+
+### Development Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Build the library
+npm run build
+
+# Run development server
+npm run dev
+```
+
+The demo application will be available at http://localhost:5173
+
+### Available Scripts
+
+```bash
+npm run build        # Build packages/core library
+npm run dev          # Start demo application
+npm run type-check   # Check TypeScript types
+npm run clean        # Clean build artifacts
+```
+
+### Building for Production
+
+The library build outputs:
+- `packages/core/dist/index.js` - ES module
+- `packages/core/dist/index.d.ts` - TypeScript definitions
+- `packages/core/dist/style.css` - Styles
+
+## Tech Stack
+
+- **React 19** - UI framework with latest features
+- **TypeScript 5.8+** - Type safety and developer experience
+- **Vite 6** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Radix UI** - Unstyled, accessible UI primitives
+- **Lucide React** - Icon library
+
+## Requirements
+
+- Node.js 18+
+- React 18+ or 19+
+- Modern browser with ES2020 support

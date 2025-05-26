@@ -32,14 +32,13 @@
     "@radix-ui/react-slot": "*",
     "class-variance-authority": "*",
     "clsx": "*",
-    "lucide-react": "*",
     "tailwind-merge": "*"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
     "@vitejs/plugin-react": "*",
-    "@tailwindcss/vite": "*",
     "autoprefixer": "*",
     "postcss": "*",
     "tailwindcss": "*",

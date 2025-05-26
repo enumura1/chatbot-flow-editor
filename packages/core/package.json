@@ -29,7 +29,6 @@
   "dependencies": {
     "@radix-ui/react-dialog": "*",
     "@radix-ui/react-scroll-area": "*",
-    "@radix-ui/react-slot": "*",
     "class-variance-authority": "*",
     "clsx": "*",
     "tailwind-merge": "*"

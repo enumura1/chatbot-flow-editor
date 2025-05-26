@@ -1,7 +1,4 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/utils/utils"
 
 const buttonVariants = cva(
@@ -39,20 +36,30 @@ function Button({
   className,
   variant,
   size,
-  asChild = false,
+  children,
+  render,
   ...props
-}: React.ComponentProps<"button"> &
+}: React.ComponentProps<"button"> & 
   VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
+    render?: (props: { className: string }) => React.ReactElement
   }) {
-  const Comp = asChild ? Slot : "button"
-
+  
+  const buttonClassName = cn(buttonVariants({ variant, size, className }))
+  
+  // render prop が提供された場合はそれを使用
+  if (render) {
+    return render({ className: buttonClassName })
+  }
+  
+  // 通常のボタン
   return (
-    <Comp
+    <button
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={buttonClassName}
       {...props}
-    />
+    >
+      {children}
+    </button>
   )
 }
 

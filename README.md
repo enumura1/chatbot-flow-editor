@@ -97,7 +97,6 @@ The library build outputs:
 - **Vite 6** - Fast build tool and development server
 - **Tailwind CSS** - Utility-first CSS framework
 - **Radix UI** - Unstyled, accessible UI primitives
-- **Lucide React** - Icon library
 
 ## Requirements
 

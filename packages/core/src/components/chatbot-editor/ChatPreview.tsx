@@ -3,7 +3,7 @@ import { ChatbotFlow } from '../../types/chatbot';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { RefreshCcw } from 'lucide-react';
+import { RefreshIcon } from '@/components/ui/icons';
 
 interface Message {
   type: 'bot' | 'user';
@@ -121,7 +121,7 @@ const ChatPreview: React.FC<ChatPreviewProps> = ({
               onClick={resetChat}
               className="flex items-center gap-1"
             >
-              <RefreshCcw className="h-4 w-4" />
+              <RefreshIcon className="h-4 w-4" />
               Reset
             </Button>
           ) : (

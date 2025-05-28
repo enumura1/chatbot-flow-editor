@@ -27,7 +27,6 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "*",
     "@radix-ui/react-scroll-area": "*",
     "class-variance-authority": "*",
     "clsx": "*",

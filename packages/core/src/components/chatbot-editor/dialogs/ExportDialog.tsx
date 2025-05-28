@@ -1,6 +1,6 @@
 import Dialog from './Dialog';
 import { ChatbotFlow } from '../../../types/chatbot';
-import { ScrollArea } from '@/components/ui/scroll-area';
+// ScrollArea import を削除
 
 interface ExportDialogProps {
   open: boolean;
@@ -49,12 +49,10 @@ const ExportDialog: React.FC<ExportDialogProps> = ({
           Below is the JSON representation of your chatbot flow. Review it and click Download to save it as a file.
         </p>
         
-        <div className="border rounded-md bg-gray-50 dark:bg-gray-800">
-          <ScrollArea className="h-80">
-            <pre className="p-4 text-xs overflow-auto font-mono">
-              {jsonString}
-            </pre>
-          </ScrollArea>
+        <div className="border rounded-md bg-gray-50 dark:bg-gray-800 h-80 overflow-y-auto">
+          <pre className="p-4 text-xs font-mono whitespace-pre-wrap break-words">
+            {jsonString}
+          </pre>
         </div>
       </div>
     </Dialog>

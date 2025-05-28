@@ -41,7 +41,7 @@ export default defineConfig({
         },
         // コード分割を有効化
         manualChunks: {
-          'ui-components': ['@radix-ui/react-dialog', '@radix-ui/react-scroll-area'],
+          'ui-components': ['@radix-ui/react-scroll-area'],
           'utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
         },
       },

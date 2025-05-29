@@ -30,11 +30,15 @@ jobs:
           npm ci
           cd packages/core && npm ci
 
-      # Install rollup native dependencies
-      - name: Install Rollup native dependencies
+      # Install native dependencies for CI environment
+      - name: Install native dependencies
         run: |
           cd packages/core
           npm install @rollup/rollup-linux-x64-gnu --optional
+          npm install lightningcss-linux-x64-gnu --optional
+          # Force reinstall lightningcss to ensure native binaries are available
+          npm uninstall lightningcss
+          npm install lightningcss
 
       # Check TypeScript types
       - name: Run type check
@@ -81,6 +85,14 @@ jobs:
           cd packages/core && npm ci
           cd ../../apps/demo && npm ci
 
+      # Install native dependencies for demo build
+      - name: Install native dependencies
+        run: |
+          cd packages/core
+          npm install @rollup/rollup-linux-x64-gnu --optional
+          npm install lightningcss-linux-x64-gnu --optional
+          npm uninstall lightningcss
+          npm install lightningcss
       # Build core library first
       - name: Build core library
         run: |

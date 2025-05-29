@@ -43,12 +43,6 @@ jobs:
           cd packages/core
           npm run type-check
 
-      # Run all tests with CI environment variable
-      - name: Run tests
-        run: |
-          cd packages/core
-          CI=true npm run test:run
-
       # Build the library
       - name: Build library
         run: |

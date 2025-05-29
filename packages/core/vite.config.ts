@@ -4,7 +4,6 @@ import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 import tailwindcss from '@tailwindcss/vite'
-import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   plugins: [
@@ -13,12 +12,17 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    visualizer({
-      filename: 'dist/stats.html',
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }),
+    ...(process.env.CI ? [] : [
+      (async () => {
+        const { visualizer } = await import('rollup-plugin-visualizer')
+        return visualizer({
+          filename: 'dist/stats.html',
+          open: true,
+          gzipSize: true,
+          brotliSize: true,
+        })
+      })()
+    ]),
   ],
   resolve: {
     alias: {
@@ -53,10 +57,5 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./src/__tests__/setup.ts'],
   },
 })

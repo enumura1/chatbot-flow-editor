@@ -30,6 +30,7 @@ jobs:
           npm ci
           cd packages/core && npm ci
 
+      # Install rollup native dependencies
       - name: Install Rollup native dependencies
         run: |
           cd packages/core
@@ -41,17 +42,17 @@ jobs:
           cd packages/core
           npm run type-check
 
-      # Run all tests
+      # Run all tests with CI environment variable
       - name: Run tests
         run: |
           cd packages/core
-          npm run test:run
+          CI=true npm run test:run
 
       # Build the library
       - name: Build library
         run: |
           cd packages/core
-          npm run build
+          CI=true npm run build
 
       # Verify build output
       - name: Check build artifacts
@@ -84,7 +85,7 @@ jobs:
       - name: Build core library
         run: |
           cd packages/core
-          npm run build
+          CI=true npm run build
 
       # Build demo application
       - name: Build demo app

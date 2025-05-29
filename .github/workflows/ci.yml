@@ -30,6 +30,11 @@ jobs:
           npm ci
           cd packages/core && npm ci
 
+      - name: Install Rollup native dependencies
+        run: |
+          cd packages/core
+          npm install @rollup/rollup-linux-x64-gnu --optional
+
       # Check TypeScript types
       - name: Run type check
         run: |

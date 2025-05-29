@@ -20,6 +20,7 @@
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly --outDir dist",
     "test": "vitest",
+    "test:run": "vitest run",
     "dev": "vite build --watch",
     "type-check": "tsc --noEmit"
   },

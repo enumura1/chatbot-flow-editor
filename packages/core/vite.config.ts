@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
@@ -12,7 +13,6 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    // バンドル分析用
     visualizer({
       filename: 'dist/stats.html',
       open: true,
@@ -39,7 +39,6 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        // コード分割を有効化
         manualChunks: {
           'ui-components': ['@radix-ui/react-scroll-area'],
           'utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
@@ -47,7 +46,6 @@ export default defineConfig({
       },
     },
     cssCodeSplit: false,
-    // 最適化設定
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -55,5 +53,10 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/__tests__/setup.ts'],
   },
 })

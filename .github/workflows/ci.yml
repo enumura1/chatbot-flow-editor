@@ -35,9 +35,6 @@ jobs:
         run: |
           cd packages/core
           npm install @rollup/rollup-linux-x64-gnu --optional
-          npm install lightningcss-linux-x64-gnu --optional
-          # Force reinstall lightningcss to ensure native binaries are available
-          npm uninstall lightningcss
           npm install lightningcss
 
       # Check TypeScript types

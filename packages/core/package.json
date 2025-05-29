@@ -19,6 +19,8 @@
   ],
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly --outDir dist",
+    "test": "vitest",
+    "test:run": "vitest run",
     "dev": "vite build --watch",
     "type-check": "tsc --noEmit"
   },
@@ -27,22 +29,26 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "*",
     "@radix-ui/react-scroll-area": "*",
     "class-variance-authority": "*",
-    "clsx": "*",
-    "tailwind-merge": "*"
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "*",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "@vitejs/plugin-react": "*",
     "autoprefixer": "*",
+    "jsdom": "^26.1.0",
     "postcss": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "vite": "*",
-    "vite-plugin-dts": "*"
+    "vite-plugin-dts": "*",
+    "vitest": "^3.1.4"
   }
 }

@@ -1,9 +1,9 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 import tailwindcss from '@tailwindcss/vite'
-import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   plugins: [
@@ -12,13 +12,17 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    // バンドル分析用
-    visualizer({
-      filename: 'dist/stats.html',
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }),
+    ...(process.env.CI ? [] : [
+      (async () => {
+        const { visualizer } = await import('rollup-plugin-visualizer')
+        return visualizer({
+          filename: 'dist/stats.html',
+          open: true,
+          gzipSize: true,
+          brotliSize: true,
+        })
+      })()
+    ]),
   ],
   resolve: {
     alias: {
@@ -39,15 +43,13 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        // コード分割を有効化
         manualChunks: {
-          'ui-components': ['@radix-ui/react-dialog', '@radix-ui/react-scroll-area'],
+          'ui-components': ['@radix-ui/react-scroll-area'],
           'utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
         },
       },
     },
     cssCodeSplit: false,
-    // 最適化設定
     minify: 'terser',
     terserOptions: {
       compress: {

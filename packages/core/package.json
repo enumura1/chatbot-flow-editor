@@ -1,54 +1,65 @@
 {
-  "name": "@chatbot-flow-editor/core",
+  "name": "chatbot-flow-editor",
   "version": "1.0.0",
-  "description": "Core chatbot flow editor components and utilities",
+  "description": "Visual chatbot flow editor - Development tool for creating conversational flows",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./styles": "./dist/style.css",
-    "./dist/style.css": "./dist/style.css"
+  "bin": {
+    "chatbot-flow-editor": "./bin/cli.js",
+    "cfe": "./bin/cli.js"
   },
+  "main": "./dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly --outDir dist",
+    "build": "vite build",
+    "dev": "vite --port 3001 --open",
+    "preview": "vite preview --port 3001",
+    "type-check": "tsc --noEmit",
     "test": "vitest",
-    "test:run": "vitest run",
-    "dev": "vite build --watch",
-    "type-check": "tsc --noEmit"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "test:run": "vitest run"
   },
   "dependencies": {
-    "@radix-ui/react-scroll-area": "*",
-    "class-variance-authority": "*",
+    "@radix-ui/react-scroll-area": "^1.2.9",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^3.3.0"
+    "tailwind-merge": "^3.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vite": "^6.3.5",
+    "open": "^10.1.2"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "*",
+    "@tailwindcss/vite": "^4.1.7",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
-    "@types/react": "*",
-    "@types/react-dom": "*",
-    "@vitejs/plugin-react": "*",
-    "autoprefixer": "*",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.0",
+    "autoprefixer": "^10.4.21",
     "jsdom": "^26.1.0",
-    "postcss": "*",
-    "tailwindcss": "*",
-    "typescript": "*",
-    "vite": "*",
-    "vite-plugin-dts": "*",
+    "postcss": "^8.5.3",
+    "rollup-plugin-visualizer": "^6.0.0",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.6.3",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.1.4"
+  },
+  "author": {
+    "name": "enumura1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enumura1/chatbot-flow-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/enumura1/chatbot-flow-editor/issues"
+  },
+  "homepage": "https://github.com/enumura1/chatbot-flow-editor#readme",
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

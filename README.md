@@ -1,8 +1,8 @@
-# 🤖 Chatbot Flow Editor
+# Chatbot Flow Editor
 
 **Visual development tool for creating chatbot conversation flows**
 
-A standalone development tool that launches in your browser - like Storybook for chatbots! Create complex conversational experiences with an intuitive visual editor.
+A visual development tool that opens in your browser. Design, test, and export chatbot conversation flows with ease.
 
 ## 🚀 Quick Start
 
@@ -14,7 +14,7 @@ npm install --save-dev chatbot-flow-editor
 npx chatbot-flow-editor
 ```
 
-Your browser will automatically open with the visual flow editor!
+Your browser will automatically open with the visual flow editor.
 
 ## 📦 Installation & Usage
 
@@ -54,9 +54,6 @@ chatbot-flow-editor
 
 # Custom port
 PORT=4000 chatbot-flow-editor
-
-# Short command alias
-cfe
 ```
 
 ### Available Commands
@@ -119,31 +116,9 @@ const currentNode = flow.find(n => n.id === currentNodeId)
 await context.sendActivity(currentNode.title)
 ```
 
-**Rasa:**
-```yaml
-# Convert flow to Rasa stories
-stories:
-- story: support_flow
-  steps:
-  - intent: greet
-  - action: utter_welcome
-```
-
 ## 🎨 Screenshots
 
-```
-┌─────────────────────────────────────────┐
-│ 🤖 Chatbot Flow Editor                  │
-├─────────────────────────────────────────┤
-│ Workflow Editor    │ Chat Preview       │
-│                    │                    │
-│ ┌─ Node 1         │ Bot: Welcome!       │
-│ ├─ Node 2         │ You: Option 1       │
-│ └─ Node 3         │ Bot: Great choice!  │
-│                   │                     │
-│ Node Editor       │ [Add Node] [Export] │
-└─────────────────────────────────────────┘
-```
+![alt text](chatbot-flow-editor.webp)
 
 ## 🔄 Workflow
 
@@ -152,22 +127,11 @@ stories:
 3. **Export Phase**: Download your flow as structured JSON
 4. **Integration Phase**: Use the JSON in your chatbot application
 
-## 🌐 Browser Support
-
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-
 ## 📋 Requirements
 
 - Node.js 18.0.0 or higher
 - Modern web browser
 - 10MB free disk space
-
-## 🤝 Contributing
-
-We welcome contributions! This is a development tool built for the community.
 
 ```bash
 git clone https://github.com/enumura1/chatbot-flow-editor.git
@@ -178,14 +142,13 @@ npm run dev
 
 ## 📄 License
 
-MIT License - build amazing chatbots! 🚀
+This project is licensed under the **MIT License**.
+See the [LICENSE](./LICENSE) file for details.
 
-## 🆘 Support
+## Support
 
 - 📖 [Documentation](https://github.com/enumura1/chatbot-flow-editor)
 - 🐛 [Report Issues](https://github.com/enumura1/chatbot-flow-editor/issues)
 - 💬 [Discussions](https://github.com/enumura1/chatbot-flow-editor/discussions)
 
 ---
-
-**Built with ❤️ for the chatbot development community**

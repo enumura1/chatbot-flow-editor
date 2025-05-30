@@ -25,7 +25,7 @@ npx chatbot-flow-editor
 ```
 
 ### Method 2: Add to your project scripts
-Add to your `package.json`:
+Add to your `package.json`
 ```json
 {
   "scripts": {
@@ -34,7 +34,7 @@ Add to your `package.json`:
 }
 ```
 
-Then run:
+Then run
 ```bash
 npm run chatbot-editor
 ```
@@ -106,7 +106,7 @@ When you export a flow, you'll get a JSON structure like:
 
 ### Using with Popular Chatbot Frameworks
 
-**Microsoft Bot Framework:**
+**Microsoft Bot Framework**
 ```javascript
 // Load your exported flow
 const flow = require('./chatbot-flow.json')

@@ -129,9 +129,7 @@ await context.sendActivity(currentNode.title)
 
 ## 📋 Requirements
 
-- Node.js 18.0.0 or higher
-- Modern web browser
-- 10MB free disk space
+- Node.js 20.0.0 or higher
 
 ```bash
 git clone https://github.com/enumura1/chatbot-flow-editor.git

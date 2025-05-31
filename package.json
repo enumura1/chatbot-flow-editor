@@ -5,13 +5,17 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "docs"
   ],
   "scripts": {
     "build": "npm run build --workspace=packages/core",
     "dev": "npm run dev --workspace=apps/demo",
     "build:core": "npm run build --workspace=packages/core",
-    "dev:demo": "npm run dev --workspace=apps/demo"
+    "dev:demo": "npm run dev --workspace=apps/demo",
+    "docs:start": "npm run start --workspace=docs",
+    "docs:build": "npm run build --workspace=docs",
+    "docs:deploy": "npm run deploy --workspace=docs"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

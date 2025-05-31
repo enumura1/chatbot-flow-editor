@@ -188,11 +188,10 @@ const config: Config = {
       additionalLanguages: ['bash', 'json', 'javascript', 'typescript'],
     },
 
-    // カラーモード設定 - ダークモードを無効にする
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true, // ダークモードスイッチを無効化
-      respectPrefersColorScheme: false, // システム設定を無視
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
 
   } satisfies Preset.ThemeConfig,

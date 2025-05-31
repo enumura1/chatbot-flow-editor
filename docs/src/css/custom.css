@@ -47,7 +47,7 @@
   --ifm-transition-slow: 400ms;
 }
 
-/* GitHub アイコン */
+/* GitHub icon */
 .header-github-link:hover {
   opacity: 0.6;
 }
@@ -67,9 +67,24 @@
   color: white;
 }
 
+/* Homepage hero */
+.hero h1,
+[class*="heroTitle"] {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: visible !important;
+  line-height: 1.2 !important;
+}
+
 .hero__title {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: visible !important;
+  line-height: 1.2 !important;
 }
 
 .hero__subtitle {
@@ -151,11 +166,19 @@
 /* Responsive adjustments */
 @media (max-width: 996px) {
   .hero__title {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    white-space: nowrap;
   }
 
   .hero__subtitle {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 997px) {
+  .hero__title {
+    white-space: nowrap;
+    font-size: 2.5rem;
   }
 }
 

@@ -110,10 +110,6 @@ const config: Config = {
               label: 'npm Package',
               href: 'https://www.npmjs.com/package/chatbot-flow-editor',
             },
-            {
-              label: 'Demo',
-              href: 'https://enumura1.github.io/chatbot-flow-editor/demo',
-            },
           ],
         },
         {

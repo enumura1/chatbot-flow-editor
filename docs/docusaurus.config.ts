@@ -161,8 +161,8 @@ const config: Config = {
               to: '/docs/user-guide',
             },
             {
-              label: 'API Reference',
-              to: '/docs/api-reference',
+              label: 'JSON Structure',
+              to: '/docs/json-structure',
             },
           ],
         },
@@ -176,10 +176,6 @@ const config: Config = {
             {
               label: 'Issues',
               href: 'https://github.com/enumura1/chatbot-flow-editor/issues',
-            },
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/chatbot-flow-editor',
             },
           ],
         },
@@ -210,37 +206,13 @@ const config: Config = {
     
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
       additionalLanguages: ['bash', 'json', 'javascript', 'typescript'],
     },
 
-    // カラーモード設定
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
-    },
-
-    // 検索設定（Algolia DocSearchを後で追加予定）
-    algolia: {
-      // The application ID provided by Algolia
-      appId: 'YOUR_APP_ID',
-      // Public API key: it is safe to commit it
-      apiKey: 'YOUR_SEARCH_API_KEY',
-      indexName: 'YOUR_INDEX_NAME',
-      // Optional: see doc section below
-      contextualSearch: true,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push
-      externalUrlRegex: 'external\\.com|domain\\.com',
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl.
-      replaceSearchResultPathname: {
-        from: '/docs/', // or as RegExp: /\/docs\//
-        to: '/',
-      },
-      // Optional: Algolia search parameters
-      searchParameters: {},
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: 'search',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
 
   } satisfies Preset.ThemeConfig,

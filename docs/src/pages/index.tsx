@@ -18,7 +18,9 @@ function HomepageHeader() {
             <Heading as="h1" className={styles.heroTitle}>
               {siteConfig.title}
             </Heading>
-            <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
+            <p className={styles.heroSubtitle}>
+              GUI tool for designing chatbot conversation flows. Create, test, and export as JSON for any chatbot framework.
+            </p>
             
             <div className={styles.quickStart}>
               <div className={styles.installCommand}>
@@ -33,7 +35,7 @@ function HomepageHeader() {
                 </button>
               </div>
               <p className={styles.quickStartText}>
-                🚀 Launch instantly in your browser
+                🎨 Launch visual flow designer in your browser
               </p>
             </div>
 
@@ -84,41 +86,41 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} - Visual Chatbot Flow Designer`}
-      description="Create, test, and export chatbot conversation flows with our visual development tool. No coding required.">
+      description="Design chatbot conversation flows with visual GUI tool. Create, test, and export JSON for any chatbot framework or platform.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
         
-        {/* Quick Start Section */}
+        {/* What It Does Section */}
         <section className={styles.quickStartSection}>
           <div className="container">
             <div className="row">
               <div className="col col--8 col--offset-2">
                 <div className="text--center">
                   <Heading as="h2" className={styles.sectionTitle}>
-                    Ready in seconds
+                    Design First, Implement Later
                   </Heading>
                   <p className={styles.sectionSubtitle}>
-                    No installation required. Just run one command and start designing.
+                    This is a visual design tool, not a complete chatbot solution. Design your flows, export JSON.
                   </p>
                   
                   <div className={styles.stepsContainer}>
                     <div className={styles.step}>
                       <div className={styles.stepNumber}>1</div>
-                      <h4>Install</h4>
-                      <code>npm install --save-dev chatbot-flow-editor</code>
+                      <h4>Design Flows</h4>
+                      <span>Create conversation paths visually</span>
                     </div>
                     <div className={styles.arrow}>→</div>
                     <div className={styles.step}>
                       <div className={styles.stepNumber}>2</div>
-                      <h4>Launch</h4>
-                      <code>npx chatbot-flow-editor</code>
+                      <h4>Test & Preview</h4>
+                      <span>Simulate conversations in real-time</span>
                     </div>
                     <div className={styles.arrow}>→</div>
                     <div className={styles.step}>
                       <div className={styles.stepNumber}>3</div>
-                      <h4>Design</h4>
-                      <span>Create your flows visually</span>
+                      <h4>Export JSON</h4>
+                      <span>Download structured flow data</span>
                     </div>
                   </div>
                 </div>
@@ -127,34 +129,37 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Use Cases Section */}
+        {/* JSON Export Section */}
         <section className={styles.useCasesSection}>
           <div className="container">
             <div className="text--center margin-bottom--xl">
               <Heading as="h2" className={styles.sectionTitle}>
-                Perfect for every team
+                Export Structured Data
               </Heading>
+              <p className={styles.sectionSubtitle}>
+                Download your conversation flows as clean JSON format
+              </p>
             </div>
             <div className="row">
               <div className="col col--4">
                 <div className={styles.useCase}>
-                  <div className={styles.useCaseIcon}>👨‍💻</div>
-                  <h3>Developers</h3>
-                  <p>Design conversation flows before coding. Export JSON and integrate with any framework.</p>
-                </div>
-              </div>
-              <div className="col col--4">
-                <div className={styles.useCase}>
                   <div className={styles.useCaseIcon}>📋</div>
-                  <h3>Product Teams</h3>
-                  <p>Plan and prototype chatbot interactions. No technical knowledge required.</p>
+                  <h3>Structured Format</h3>
+                  <p>Export flows as clean, well-structured JSON data with clear node relationships and options.</p>
                 </div>
               </div>
               <div className="col col--4">
                 <div className={styles.useCase}>
-                  <div className={styles.useCaseIcon}>🎨</div>
-                  <h3>Designers</h3>
-                  <p>Create and test conversational user experiences with live preview.</p>
+                  <div className={styles.useCaseIcon}>💾</div>
+                  <h3>Easy Export</h3>
+                  <p>One-click export functionality to download your complete conversation flow design.</p>
+                </div>
+              </div>
+              <div className="col col--4">
+                <div className={styles.useCase}>
+                  <div className={styles.useCaseIcon}>🔄</div>
+                  <h3>Import & Export</h3>
+                  <p>Save your work and share flows with team members through JSON file exchange.</p>
                 </div>
               </div>
             </div>

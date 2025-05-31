@@ -16,27 +16,27 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Design conversation flows with an intuitive visual interface. 
-        Drag, drop, and connect nodes to create complex chatbot logic without coding.
+        Create nodes, add options, and connect flows without any coding required.
       </>
     ),
   },
   {
-    title: 'Test Preview',
+    title: 'Live Chat Preview',
     icon: '💬',
     description: (
       <>
         Test your flows with the built-in chat simulator. 
-        Experience realistic conversations just like your users will.
+        Experience conversations exactly as your users will before implementation.
       </>
     ),
   },
   {
-    title: 'Export Ready',
+    title: 'JSON Export',
     icon: '📦',
     description: (
       <>
-        Export flows as clean JSON structure. 
-        Use with any chatbot framework or custom implementation.
+        Export flows as clean, structured JSON data. 
+        Integrate with any chatbot framework, platform, or custom implementation.
       </>
     ),
   },
@@ -66,10 +66,10 @@ export default function HomepageFeatures() {
       <div className="container">
         <div className="text--center margin-bottom--xl">
           <Heading as="h2" className={styles.featuresTitle}>
-            Everything you need to design chatbots
+            Everything you need to design chatbot flows
           </Heading>
           <p className={styles.featuresSubtitle}>
-            From concept to implementation in minutes, not hours
+            A complete visual design tool for conversation flow creation
           </p>
         </div>
         <div className="row">

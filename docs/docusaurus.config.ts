@@ -42,26 +42,10 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/enumura1/chatbot-flow-editor/tree/main/docs/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/enumura1/chatbot-flow-editor/tree/main/docs/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false, // ブログ機能を無効化
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -117,7 +101,6 @@ const config: Config = {
             },
           ],
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: 'dropdown',
           label: 'Links',
@@ -183,10 +166,6 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/enumura1/chatbot-flow-editor',
             },
@@ -209,10 +188,11 @@ const config: Config = {
       additionalLanguages: ['bash', 'json', 'javascript', 'typescript'],
     },
 
+    // カラーモード設定 - ダークモードを無効にする
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
+      disableSwitch: true, // ダークモードスイッチを無効化
+      respectPrefersColorScheme: false, // システム設定を無視
     },
 
   } satisfies Preset.ThemeConfig,

@@ -56,8 +56,11 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/chatbot-flow-editor-social-card.jpg',
-    
-    // 告知バナー（リリース時などに使用）
+    metadata: [
+      {name: 'og:type', content: 'website'},
+      {name: 'og:site_name', content: 'Chatbot Flow Editor'}
+    ],
+    // banner
     announcementBar: {
       id: 'support_us',
       content:

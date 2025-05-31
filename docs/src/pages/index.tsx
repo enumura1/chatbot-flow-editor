@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -100,7 +101,7 @@ export default function Home() {
                     Design First, Implement Later
                   </Heading>
                   <p className={styles.sectionSubtitle}>
-                    This is a visual design tool, not a complete chatbot solution. Design your flows, export JSON, integrate anywhere.
+                    This is a visual design tool, not a complete chatbot solution. Design your flows, export JSON.
                   </p>
                   
                   <div className={styles.stepsContainer}>
@@ -121,12 +122,6 @@ export default function Home() {
                       <h4>Export JSON</h4>
                       <span>Download structured flow data</span>
                     </div>
-                    <div className={styles.arrow}>→</div>
-                    <div className={styles.step}>
-                      <div className={styles.stepNumber}>4</div>
-                      <h4>Integrate</h4>
-                      <span>Use in your chatbot platform</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -134,71 +129,37 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Integration Examples */}
+        {/* JSON Export Section */}
         <section className={styles.useCasesSection}>
           <div className="container">
             <div className="text--center margin-bottom--xl">
               <Heading as="h2" className={styles.sectionTitle}>
-                Integrates with Any Platform
+                Export Structured Data
               </Heading>
               <p className={styles.sectionSubtitle}>
-                Export clean JSON structure compatible with popular frameworks
+                Download your conversation flows as clean JSON format
               </p>
             </div>
             <div className="row">
               <div className="col col--4">
                 <div className={styles.useCase}>
-                  <div className={styles.useCaseIcon}>🤖</div>
-                  <h3>Bot Framework</h3>
-                  <p>Microsoft Bot Framework, Botpress, Rasa - use the exported JSON to drive your bot logic.</p>
-                </div>
-              </div>
-              <div className="col col--4">
-                <div className={styles.useCase}>
-                  <div className={styles.useCaseIcon}>⚡</div>
-                  <h3>Custom Code</h3>
-                  <p>Build your own chatbot implementation using the structured flow data from the visual designer.</p>
-                </div>
-              </div>
-              <div className="col col--4">
-                <div className={styles.useCase}>
-                  <div className={styles.useCaseIcon}>🔧</div>
-                  <h3>Any Platform</h3>
-                  <p>The JSON output is framework-agnostic - adapt it to work with any chatbot platform or service.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Benefits */}
-        <section className={styles.quickStartSection}>
-          <div className="container">
-            <div className="text--center margin-bottom--xl">
-              <Heading as="h2" className={styles.sectionTitle}>
-                Perfect for every team
-              </Heading>
-            </div>
-            <div className="row">
-              <div className="col col--4">
-                <div className={styles.useCase}>
-                  <div className={styles.useCaseIcon}>👨‍💻</div>
-                  <h3>Developers</h3>
-                  <p>Design conversation flows before coding. Export structured JSON and integrate with any framework.</p>
-                </div>
-              </div>
-              <div className="col col--4">
-                <div className={styles.useCase}>
                   <div className={styles.useCaseIcon}>📋</div>
-                  <h3>Product Teams</h3>
-                  <p>Plan and prototype chatbot interactions without technical knowledge. Collaborate on flow design.</p>
+                  <h3>Structured Format</h3>
+                  <p>Export flows as clean, well-structured JSON data with clear node relationships and options.</p>
                 </div>
               </div>
               <div className="col col--4">
                 <div className={styles.useCase}>
-                  <div className={styles.useCaseIcon}>🎨</div>
-                  <h3>UX Designers</h3>
-                  <p>Create and test conversational user experiences with live preview before development.</p>
+                  <div className={styles.useCaseIcon}>💾</div>
+                  <h3>Easy Export</h3>
+                  <p>One-click export functionality to download your complete conversation flow design.</p>
+                </div>
+              </div>
+              <div className="col col--4">
+                <div className={styles.useCase}>
+                  <div className={styles.useCaseIcon}>🔄</div>
+                  <h3>Import & Export</h3>
+                  <p>Save your work and share flows with team members through JSON file exchange.</p>
                 </div>
               </div>
             </div>

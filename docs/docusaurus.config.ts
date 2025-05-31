@@ -161,8 +161,8 @@ const config: Config = {
               to: '/docs/user-guide',
             },
             {
-              label: 'API Reference',
-              to: '/docs/api-reference',
+              label: 'JSON Structure',
+              to: '/docs/json-structure',
             },
           ],
         },
@@ -176,10 +176,6 @@ const config: Config = {
             {
               label: 'Issues',
               href: 'https://github.com/enumura1/chatbot-flow-editor/issues',
-            },
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/chatbot-flow-editor',
             },
           ],
         },

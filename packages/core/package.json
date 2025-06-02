@@ -63,19 +63,18 @@
     "low-code"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com"
+    "name": "enumura1"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/chatbot-flow-editor.git"
+    "url": "https://github.com/enumura1/chatbot-flow-editor.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/chatbot-flow-editor/issues"
+    "url": "https://github.com/enumura1/chatbot-flow-editor/issues"
   },
-  "homepage": "https://github.com/your-username/chatbot-flow-editor#readme",
+  "homepage": "https://github.com/enumura1/chatbot-flow-editor#readme",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

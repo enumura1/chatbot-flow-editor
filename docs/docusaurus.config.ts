@@ -45,7 +45,7 @@ const config: Config = {
           editUrl:
             'https://github.com/enumura1/chatbot-flow-editor/tree/main/docs/',
         },
-        blog: false, // ブログ機能を無効化
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },

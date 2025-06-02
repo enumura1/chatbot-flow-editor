@@ -1,6 +1,5 @@
 import Dialog from './Dialog';
 import { ChatbotFlow } from '../../../types/chatbot';
-// ScrollArea import を削除
 
 interface ExportDialogProps {
   open: boolean;

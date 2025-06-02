@@ -13,16 +13,16 @@ export const generateNodePositions = (flow: ChatbotFlow): NodePositions => {
   
   if (!rootNode) return positions;
   
-  // ノードマップの作成
+  // Create node map for quick lookup
   const nodeMap = flow.reduce((map, node) => {
     map[node.id] = node;
     return map;
   }, {} as Record<number, ChatNode>);
   
-  // 訪問済みノードを追跡
+  // Track visited nodes to prevent infinite loops
   const visited = new Set<number>();
   
-  // 再帰的にノードの位置を計算する関数
+  // Recursively calculate node positions
   const calculatePositions = (nodeId: number, depth: number, index: number) => {
     if (visited.has(nodeId)) return;
     visited.add(nodeId);
@@ -30,19 +30,19 @@ export const generateNodePositions = (flow: ChatbotFlow): NodePositions => {
     const node = nodeMap[nodeId];
     if (!node) return;
     
-    // 階層表示のための位置計算
-    const yPos = depth * 70;  // 垂直間隔
-    const xPos = index * 30;  // 水平間隔（実際には使用されない）
+    // Calculate position for hierarchical display
+    const yPos = depth * 70;  // Vertical spacing
+    const xPos = index * 30;  // Horizontal spacing (not actually used)
     
     positions[nodeId] = { x: xPos, y: yPos };
     
-    // 子ノードの位置を計算
+    // Calculate positions for child nodes
     node.options.forEach((opt, idx) => {
       calculatePositions(opt.nextId, depth + 1, index + idx);
     });
   };
   
-  // ルートノードから計算開始
+  // Start calculation from root node
   calculatePositions(rootNode.id, 0, 0);
   
   return positions;
@@ -77,15 +77,15 @@ export const parseImportedJson = (jsonString: string): ChatbotFlow | null => {
   }
 };
 
-// 既存のフローに階層パスを追加する関数
+// Add hierarchy paths to existing flow
 export const updateFlowWithHierarchyPaths = (flow: ChatbotFlow): ChatbotFlow => {
-  // ノードマップの作成（ID → ノード）
+  // Create node map (ID → Node)
   const nodeMap: Record<number, ChatNode> = {};
   flow.forEach(node => {
     nodeMap[node.id] = {...node};
   });
   
-  // 親子関係を設定
+  // Set parent-child relationships
   flow.forEach(node => {
     node.options.forEach(option => {
       const targetNode = nodeMap[option.nextId];
@@ -95,21 +95,21 @@ export const updateFlowWithHierarchyPaths = (flow: ChatbotFlow): ChatbotFlow => 
     });
   });
   
-  // ルートノード（ID=1）から始める
+  // Start with root node (ID=1)
   const rootNode = nodeMap[1];
   if (rootNode) {
     rootNode.hierarchyPath = "1";
     
-    // 階層パスを再帰的に設定
+    // Recursively set hierarchy paths
     const setHierarchyPaths = (nodeId: number, parentPath: string) => {
-      // このノードを親とする子ノードを見つける
+      // Find child nodes that have this node as parent
       const childNodes = Object.values(nodeMap).filter(n => n.parentId === nodeId);
       
-      // 各子ノードに階層パスを設定
+      // Set hierarchy path for each child node
       childNodes.forEach((childNode, index) => {
         childNode.hierarchyPath = `${parentPath}-${index + 1}`;
         
-        // 再帰的に子ノードの子も処理
+        // Recursively process children of children
         setHierarchyPaths(childNode.id, childNode.hierarchyPath);
       });
     };
@@ -117,6 +117,6 @@ export const updateFlowWithHierarchyPaths = (flow: ChatbotFlow): ChatbotFlow => 
     setHierarchyPaths(rootNode.id, rootNode.hierarchyPath);
   }
   
-  // 更新されたノードのリストを返す
+  // Return updated node list
   return Object.values(nodeMap);
 };

@@ -54,6 +54,9 @@
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.1.4"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
+  },
   "keywords": [
     "chatbot",
     "flow-editor",

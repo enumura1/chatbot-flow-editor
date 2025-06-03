@@ -7,7 +7,7 @@ on:
     branches: [main, develop]
 
 jobs:
-  basic-check:
+  quality-check:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,8 +26,26 @@ jobs:
           npm ci
           cd packages/core && npm ci
 
-      # Check TypeScript types only
+      # Type checking
       - name: Run type check
         run: |
           cd packages/core
           npm run type-check
+
+      # Build check
+      - name: Build check
+        run: |
+          cd packages/core
+          npm run build
+
+      # Run tests
+      - name: Run tests
+        run: |
+          cd packages/core
+          npm run test:run
+
+      # Package check
+      - name: Package check
+        run: |
+          cd packages/core
+          npm pack --dry-run

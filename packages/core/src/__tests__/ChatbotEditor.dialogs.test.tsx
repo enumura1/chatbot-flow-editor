@@ -55,8 +55,11 @@ describe('ChatbotEditor - Dialog Operations', () => {
     const exportButton = screen.getByText('Export')
     await user.click(exportButton)
     
-    // Confirm Export dialog is open
-    expect(screen.getByText('Export JSON')).toBeInTheDocument()
+    // Wait for lazy-loaded dialog to appear
+    await waitFor(() => {
+      expect(screen.getByText('Export JSON')).toBeInTheDocument()
+    }, { timeout: 3000 })
+    
     expect(screen.getByText('Download')).toBeInTheDocument()
   })
 
@@ -67,8 +70,11 @@ describe('ChatbotEditor - Dialog Operations', () => {
     const importButton = screen.getByText('Import')
     await user.click(importButton)
     
-    // Confirm Import dialog is open
-    expect(screen.getByText('Import JSON')).toBeInTheDocument()
+    // Wait for lazy-loaded dialog to appear
+    await waitFor(() => {
+      expect(screen.getByText('Import JSON')).toBeInTheDocument()
+    }, { timeout: 3000 })
+    
     expect(screen.getByText('Select a JSON file')).toBeInTheDocument()
   })
 })

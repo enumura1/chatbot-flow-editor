@@ -1,0 +1,33 @@
+# Development files
+docs/
+apps/
+**/*.test.ts
+**/*.test.tsx
+**/__tests__/
+.github/
+*.md
+!README.md
+vite.config.ts
+tsconfig.json
+tsconfig.*.json
+
+# Source files (since we ship dist/)
+src/
+!src/index.ts
+
+# Build tools
+*.log
+coverage/
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.temp

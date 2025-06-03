@@ -20,37 +20,29 @@ jobs:
           node-version: "20.x"
           cache: "npm"
 
-      # Install root dependencies
       - name: Install root dependencies
         run: npm ci
 
-      # Clean install for packages
+      - name: Clean core dependencies
+        working-directory: packages/core
+        run: rm -rf node_modules package-lock.json
+
       - name: Install core dependencies
-        run: |
-          cd packages/core
-          rm -rf node_modules package-lock.json
-          npm install
+        working-directory: packages/core
+        run: npm install
 
-      # Type checking
       - name: Run type check
-        run: |
-          cd packages/core
-          npm run type-check
+        working-directory: packages/core
+        run: npm run type-check
 
-      # Build check
       - name: Build check
-        run: |
-          cd packages/core
-          npm run build
+        working-directory: packages/core
+        run: npm run build
 
-      # Run tests
       - name: Run tests
-        run: |
-          cd packages/core
-          npm run test:run
+        working-directory: packages/core
+        run: npm run test:run
 
-      # Package check
       - name: Package check
-        run: |
-          cd packages/core
-          npm pack --dry-run
+        working-directory: packages/core
+        run: npm pack --dry-run

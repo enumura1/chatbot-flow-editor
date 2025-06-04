@@ -55,7 +55,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/chatbot-flow-editor-social-card.jpg',
+    image: 'img/chatbot-flow-editor-social-card.webp',
     metadata: [
       {name: 'og:type', content: 'website'},
       {name: 'og:site_name', content: 'Chatbot Flow Editor'}
@@ -179,7 +179,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Chatbot Flow Editor. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} enumura1. Built with Docusaurus.`,
     },
     
     prism: {

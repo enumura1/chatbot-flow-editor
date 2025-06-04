@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -62,15 +61,11 @@ function HomepageHeader() {
                   <span className={styles.dot}></span>
                 </div>
                 <div className={styles.browserContent}>
-                  <div className={styles.editorPreview}>
-                    <div className={styles.nodePreview}>
-                      <div className={styles.node}>💬</div>
-                      <div className={styles.connector}></div>
-                      <div className={styles.node}>❓</div>
-                      <div className={styles.connector}></div>
-                      <div className={styles.node}>✅</div>
-                    </div>
-                  </div>
+                  <img 
+                    src="img/chatbot-flow-editor.webp"
+                    alt="Chatbot Flow Editor Interface"
+                    className={styles.screenshot}
+                  />
                 </div>
               </div>
             </div>

@@ -55,7 +55,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/chatbot-flow-editor-social-card.jpg',
+    image: 'img/chatbot-flow-editor-social-card.webp',
     metadata: [
       {name: 'og:type', content: 'website'},
       {name: 'og:site_name', content: 'Chatbot Flow Editor'}

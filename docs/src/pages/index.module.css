@@ -147,7 +147,6 @@
   transform: translateY(-2px);
 }
 
-/* Hero Image */
 .heroImage {
   display: flex;
   justify-content: center;
@@ -165,8 +164,8 @@
   overflow: hidden;
   transform: rotateY(-10deg) rotateX(5deg);
   transition: transform 0.3s ease;
-  width: 400px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
 }
 
 .browserMockup:hover {
@@ -175,16 +174,18 @@
 
 .browserHeader {
   background: #f1f5f9;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
   border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+  height: 40px;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #ef4444;
 }
@@ -198,43 +199,24 @@
 }
 
 .browserContent {
-  padding: 2rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: calc(100% - 40px);
+  display: block;
+  overflow: hidden;
+  background: transparent;
 }
 
-.editorPreview {
+.screenshot {
   width: 100%;
-}
-
-.nodePreview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.node {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: white;
-  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
-  animation: pulse 2s infinite;
-}
-
-.connector {
-  width: 2px;
-  height: 20px;
-  background: linear-gradient(to bottom, #0ea5e9, #3b82f6);
-  border-radius: 1px;
+  height: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: left top;
+  display: block;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 @keyframes pulse {
@@ -247,7 +229,6 @@
   }
 }
 
-/* Quick Start Section */
 .quickStartSection {
   padding: 6rem 0;
   background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
@@ -354,7 +335,6 @@
   justify-content: center;
 }
 
-/* Use Cases Section */
 .useCasesSection {
   padding: 6rem 0;
   background: white;
@@ -422,7 +402,8 @@
   .browserMockup {
     transform: none;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
+    height: 400px;
   }
 
   .stepsContainer {
@@ -470,5 +451,19 @@
   .step code {
     font-size: 0.75rem;
     padding: 0.5rem 0.6rem;
+  }
+
+  .browserMockup {
+    max-width: 500px;
+    height: 350px;
+  }
+
+  .browserHeader {
+    padding: 0.4rem 0.8rem;
+    height: 35px;
+  }
+
+  .browserContent {
+    height: calc(100% - 35px);
   }
 }

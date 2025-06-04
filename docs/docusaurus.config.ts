@@ -179,7 +179,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Chatbot Flow Editor. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} enumura1. Built with Docusaurus.`,
     },
     
     prism: {

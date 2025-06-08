@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Hello! How can I help you today?",
+    "options": [
+      { "label": "About products", "nextId": 2 },
+      { "label": "About services", "nextId": 3 }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Which product would you like to know about?",
+    "options": [
+      { "label": "Smartphones", "nextId": 4 },
+      { "label": "Computers", "nextId": 5 }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Let me tell you about our services.",
+    "options": [
+      { "label": "Pricing plans", "nextId": 6 },
+      { "label": "Support options", "nextId": 7 }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "We have the latest smartphones available. Would you like me to send you a catalog?",
+    "options": []
+  },
+  {
+    "id": 5,
+    "title": "We offer a wide range of computers for both business and personal use.",
+    "options": []
+  },
+  {
+    "id": 6,
+    "title": "Our monthly plans start from $10. I can send you detailed pricing information.",
+    "options": []
+  },
+  {
+    "id": 7,
+    "title": "We provide 24/7 customer support to assist you whenever you need help.",
+    "options": []
+  }
+]

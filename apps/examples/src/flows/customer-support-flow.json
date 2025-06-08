@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "title": "Hello! This is customer support. How can I assist you today?",
+    "options": [
+      { "label": "Order inquiries", "nextId": 2 },
+      { "label": "Shipping questions", "nextId": 3 },
+      { "label": "Returns & exchanges", "nextId": 4 }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "I can help with your order. What would you like to know?",
+    "options": [
+      { "label": "Check order status", "nextId": 5 },
+      { "label": "Cancel my order", "nextId": 6 },
+      { "label": "Modify my order", "nextId": 7 }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "I'll help you with shipping information.",
+    "options": [
+      { "label": "Track my package", "nextId": 8 },
+      { "label": "Change delivery address", "nextId": 9 }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "I can guide you through returns and exchanges.",
+    "options": [
+      { "label": "Return an item", "nextId": 10 },
+      { "label": "Exchange an item", "nextId": 11 }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Please provide your order number. You can also check your order status in your account dashboard.",
+    "options": []
+  },
+  {
+    "id": 6,
+    "title": "If your order hasn't shipped yet, we can cancel it. Please provide your order number.",
+    "options": []
+  },
+  {
+    "id": 7,
+    "title": "Order modifications are possible before shipping. Please call our support line for immediate assistance.",
+    "options": []
+  },
+  {
+    "id": 8,
+    "title": "You can track your package using the tracking number from your order confirmation email.",
+    "options": []
+  },
+  {
+    "id": 9,
+    "title": "Address changes are possible before shipping. For urgent requests, please call us directly.",
+    "options": []
+  },
+  {
+    "id": 10,
+    "title": "Returns are accepted within 30 days of delivery. Please use our online return form to get started.",
+    "options": []
+  },
+  {
+    "id": 11,
+    "title": "For defective items, we offer free exchanges. Please describe the issue with your product.",
+    "options": []
+  }
+]

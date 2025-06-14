@@ -1,241 +1,142 @@
-/**
- * Chatbot Flow Editor Documentation Custom Styles
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-
-  /* Custom colors */
-  --ifm-color-secondary: #4f46e5;
-  --ifm-color-success: #10b981;
-  --ifm-color-info: #3b82f6;
-  --ifm-color-warning: #f59e0b;
-  --ifm-color-danger: #ef4444;
-
-  /* Font settings */
-  --ifm-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
-  --ifm-font-family-monospace: "JetBrains Mono", "Fira Code", Consolas,
-    "Liberation Mono", Menlo, Monaco, "Courier New", monospace;
-
-  /* Navigation */
-  --ifm-navbar-height: 4rem;
-  --ifm-navbar-padding-vertical: 0.75rem;
-  --ifm-navbar-padding-horizontal: 1.5rem;
-
-  /* Code blocks */
-  --ifm-code-font-size: 95%;
-  --ifm-code-border-radius: 0.5rem;
-
-  /* Border radius */
-  --ifm-button-border-radius: 0.5rem;
-  --ifm-card-border-radius: 0.75rem;
-
-  /* Animations */
-  --ifm-transition-fast: 200ms;
-  --ifm-transition-slow: 400ms;
-}
-
-/* GitHub icon */
-.header-github-link:hover {
-  opacity: 0.6;
-}
-
-.header-github-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-    no-repeat;
-}
-
 /* Homepage hero */
 .hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
 }
 
-/* Homepage hero */
 .hero h1,
 [class*="heroTitle"] {
   font-size: 4rem !important;
   font-weight: 800 !important;
-  white-space: nowrap !important;
+  white-space: normal !important;
   overflow: visible !important;
   text-overflow: visible !important;
   line-height: 1.2 !important;
+  word-break: break-word !important;
+  hyphens: auto !important;
 }
 
 .hero__title {
   font-size: 2.2rem !important;
   font-weight: 800 !important;
-  white-space: nowrap !important;
+  white-space: normal !important;
   overflow: visible !important;
   text-overflow: visible !important;
   line-height: 1.2 !important;
+  word-break: break-word !important;
+  hyphens: auto !important;
 }
 
 .hero__subtitle {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-}
-
-/* Cards */
-.card {
-  border: none;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all var(--ifm-transition-fast) ease;
-}
-
-.card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transform: translateY(-2px);
-}
-
-/* Code blocks */
-.prism-code {
-  font-size: 14px;
-}
-
-/* Admonitions (alert boxes) */
-.admonition {
-  border-radius: var(--ifm-card-border-radius);
-  border: none;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
-
-/* Badges */
-.badge {
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
-}
-
-/* Tables */
-.table-of-contents {
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-card-border-radius);
-  padding: 1rem;
-  background: var(--ifm-background-surface-color);
-}
-
-/* Footer */
-.footer {
-  background: var(--ifm-background-color);
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-}
-
-/* Search */
-.DocSearch {
-  --docsearch-primary-color: var(--ifm-color-primary);
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--ifm-color-emphasis-100);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--ifm-color-emphasis-300);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--ifm-color-emphasis-400);
+  white-space: normal !important;
+  word-break: break-word !important;
+  line-height: 1.5;
 }
 
 /* Responsive adjustments */
 @media (max-width: 996px) {
+  .hero {
+    min-height: 70vh;
+    padding: 3rem 0;
+  }
+
+  .hero h1,
+  [class*="heroTitle"] {
+    font-size: 2.8rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1.5rem !important;
+  }
+
   .hero__title {
-    font-size: 1.6rem;
-    white-space: nowrap;
+    font-size: 2.2rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 65vh;
+    padding: 2.5rem 0;
+  }
+
+  .hero h1,
+  [class*="heroTitle"] {
+    font-size: 2.4rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .hero__title {
+    font-size: 2rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1.2rem !important;
   }
 
   .hero__subtitle {
     font-size: 1rem;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+
+  .hero h1,
+  [class*="heroTitle"] {
+    font-size: 2rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero__title {
+    font-size: 1.8rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
   }
 }
 
 @media (min-width: 997px) {
+  .hero {
+    min-height: 80vh;
+  }
+
   .hero__title {
-    white-space: nowrap;
+    white-space: normal;
     font-size: 2.5rem;
+    word-break: break-word;
   }
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* Button hover effects */
-.button {
-  transition: all var(--ifm-transition-fast) ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-}
-
-/* Inline code */
-code {
-  background: var(--ifm-color-emphasis-100);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
-  font-size: 0.875em;
-}
-
-/* Link hover effects */
-a {
-  transition: color var(--ifm-transition-fast) ease;
-}
-
-/* Menu items */
-.menu__link {
-  border-radius: 0.375rem;
-  transition: all var(--ifm-transition-fast) ease;
-}
-
-.menu__link:hover {
-  background: var(--ifm-color-emphasis-100);
-}
-
-/* Breadcrumbs */
-.breadcrumbs {
-  background: var(--ifm-color-emphasis-50);
-  border-radius: var(--ifm-card-border-radius);
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
 }

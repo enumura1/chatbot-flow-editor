@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -8,7 +9,22 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('npx chatbot-flow-editor');
+      setIsCopied(true);
+      // Display end
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
@@ -20,17 +36,19 @@ function HomepageHeader() {
             <p className={styles.heroSubtitle}>
               GUI tool for designing chatbot conversation flows. Create, test, and export as JSON for any chatbot framework.
             </p>
-            
+
             <div className={styles.quickStart}>
               <div className={styles.installCommand}>
                 <span className={styles.commandPrefix}>$</span>
                 <code>npx chatbot-flow-editor</code>
-                <button 
-                  className={styles.copyButton}
-                  onClick={() => navigator.clipboard.writeText('npx chatbot-flow-editor')}
-                  title="Copy command"
+                <button
+                  className={clsx(styles.copyButton, {
+                    [styles.copied]: isCopied
+                  })}
+                  onClick={handleCopy}
+                  title={isCopied ? "Copied!" : "Copy command"}
                 >
-                  📋
+                  {isCopied ? '✅' : '📋'}
                 </button>
               </div>
               <p className={styles.quickStartText}>
@@ -51,7 +69,7 @@ function HomepageHeader() {
               </Link>
             </div>
           </div>
-          
+
           <div className={styles.heroImage}>
             <div className={styles.mockupContainer}>
               <div className={styles.browserMockup}>
@@ -61,7 +79,7 @@ function HomepageHeader() {
                   <span className={styles.dot}></span>
                 </div>
                 <div className={styles.browserContent}>
-                  <img 
+                  <img
                     src="img/chatbot-flow-editor.webp"
                     alt="Chatbot Flow Editor Interface"
                     className={styles.screenshot}
@@ -77,7 +95,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`${siteConfig.title} - Visual Chatbot Flow Designer`}
@@ -85,7 +103,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        
+
         {/* What It Does Section */}
         <section className={styles.quickStartSection}>
           <div className="container">
@@ -98,7 +116,7 @@ export default function Home() {
                   <p className={styles.sectionSubtitle}>
                     This is a visual design tool, not a complete chatbot solution. Design your flows, export JSON.
                   </p>
-                  
+
                   <div className={styles.stepsContainer}>
                     <div className={styles.step}>
                       <div className={styles.stepNumber}>1</div>

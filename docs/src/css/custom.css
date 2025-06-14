@@ -2,7 +2,7 @@
 .hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  min-height: 60vh; /* ヒーローセクションの最小高さを設定 */
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -41,27 +41,27 @@
 /* Responsive adjustments */
 @media (max-width: 996px) {
   .hero {
-    min-height: 70vh; /* モバイルでより高く */
-    padding: 3rem 0; /* 上下の余白を追加 */
+    min-height: 70vh;
+    padding: 3rem 0;
   }
 
   .hero h1,
   [class*="heroTitle"] {
-    font-size: 2.8rem !important; /* より大きく */
+    font-size: 2.8rem !important;
     white-space: normal !important;
     word-break: break-word !important;
     margin-bottom: 1.5rem !important;
   }
 
   .hero__title {
-    font-size: 2.2rem !important; /* より大きく */
+    font-size: 2.2rem !important;
     white-space: normal !important;
     word-break: break-word !important;
     margin-bottom: 1.5rem !important;
   }
 
   .hero__subtitle {
-    font-size: 1.1rem; /* より大きく */
+    font-size: 1.1rem;
     white-space: normal !important;
     word-break: break-word !important;
     margin-bottom: 2rem;
@@ -77,14 +77,14 @@
 
   .hero h1,
   [class*="heroTitle"] {
-    font-size: 2.4rem !important; /* さらに調整 */
+    font-size: 2.4rem !important;
     white-space: normal !important;
     word-break: break-word !important;
     margin-bottom: 1.2rem !important;
   }
 
   .hero__title {
-    font-size: 2rem !important; /* さらに調整 */
+    font-size: 2rem !important;
     white-space: normal !important;
     word-break: break-word !important;
     margin-bottom: 1.2rem !important;
@@ -107,14 +107,14 @@
 
   .hero h1,
   [class*="heroTitle"] {
-    font-size: 2rem !important; /* 最小画面用 */
+    font-size: 2rem !important;
     white-space: normal !important;
     word-break: break-word !important;
     margin-bottom: 1rem !important;
   }
 
   .hero__title {
-    font-size: 1.8rem !important; /* 最小画面用 */
+    font-size: 1.8rem !important;
     white-space: normal !important;
     word-break: break-word !important;
     margin-bottom: 1rem !important;
@@ -131,7 +131,7 @@
 
 @media (min-width: 997px) {
   .hero {
-    min-height: 80vh; /* デスクトップでより高く */
+    min-height: 80vh;
   }
 
   .hero__title {

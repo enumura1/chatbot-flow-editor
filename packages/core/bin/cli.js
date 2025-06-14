@@ -7,7 +7,7 @@ const packageRoot = join(__dirname, '..')
 
 console.log('Starting Chatbot Flow Editor...')
 
-const vite = spawn('npx', ['vite', '--port', '4001', '--open'], {
+const vite = spawn('npx', ['vite', '--port', '3001', '--open'], {
   cwd: packageRoot,
   stdio: 'inherit'
 })

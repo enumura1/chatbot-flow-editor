@@ -4,7 +4,7 @@
 
 A GUI tool that opens in your browser. Design, test, and export chatbot conversation flows as JSON.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install as development dependency
@@ -14,9 +14,9 @@ npm install --save-dev chatbot-flow-editor
 npx chatbot-flow-editor
 ```
 
-Your browser will automatically open with the visual flow editor at `http://localhost:4001`.
+Your browser will automatically open with the visual flow editor at `http://localhost:3001`.
 
-## 📦 Installation & Usage
+## Installation & Usage
 
 ### Method 1: Using npx (Recommended)
 ```bash
@@ -45,11 +45,11 @@ npm install -g chatbot-flow-editor
 chatbot-flow-editor
 ```
 
-## 🖥️ Usage
+## Usage
 
 ### Starting the Editor
 ```bash
-# Default (opens on http://localhost:4001)
+# Default (opens on http://localhost:3001)
 chatbot-flow-editor
 
 # Custom port
@@ -63,16 +63,16 @@ chatbot-flow-editor help     # Show help
 chatbot-flow-editor version  # Show version
 ```
 
-## 🎯 How to Use
+## How to Use
 
-1. **🚀 Launch**: Run `npx chatbot-flow-editor`
-2. **➕ Create Nodes**: Click "Add Node" to create conversation points
-3. **✏️ Edit Content**: Click any node to modify its content and options
-4. **🧪 Test Flow**: Use the chat preview to simulate user interactions
-5. **💾 Export JSON**: Download your flows as structured JSON files
-6. **📂 Import Flows**: Load existing JSON flows to continue editing
+1. **Launch**: Run `npx chatbot-flow-editor`
+2. **Create Nodes**: Click "Add Node" to create conversation points
+3. **Edit Content**: Click any node to modify its content and options
+4. **Test Flow**: Use the chat preview to simulate user interactions
+5. **Export JSON**: Download your flows as structured JSON files
+6. **Import Flows**: Load existing JSON flows to continue editing
 
-## 🔧 Development Workflow
+## Development Workflow
 
 ```bash
 # In your chatbot project directory
@@ -85,7 +85,7 @@ npx chatbot-flow-editor
 # → Use the exported JSON in your chatbot application
 ```
 
-## 📁 JSON Structure
+## JSON Structure
 
 When you export a flow, you'll get a JSON structure like:
 
@@ -102,7 +102,7 @@ When you export a flow, you'll get a JSON structure like:
 ]
 ```
 
-## 🛠️ Integration
+## Integration
 
 The exported JSON can be used in any chatbot implementation:
 
@@ -124,22 +124,22 @@ function processUserChoice(currentNodeId, userChoice) {
 }
 ```
 
-## 🎨 Screenshots
+## Screenshots
 
 ![Chatbot Flow Editor Interface](chatbot-flow-editor.webp)
 
-## 🔄 Workflow
+## Workflow
 
 1. **Design Phase**: Use the visual editor to create conversation flows
 2. **Test Phase**: Try different conversation paths with the live preview  
 3. **Export Phase**: Download your flow as structured JSON
 4. **Integration Phase**: Use the JSON in your chatbot application
 
-## 📋 Requirements
+## Requirements
 
 - Node.js 20.0.0 or higher
 
-## 🛠️ Development
+## Development
 
 ```bash
 git clone https://github.com/enumura1/chatbot-flow-editor.git
@@ -147,24 +147,25 @@ cd chatbot-flow-editor
 npm install
 npm run dev
 ```
+- [Development Guide](https://enumura1.github.io/chatbot-flow-editor/docs/development)
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**.
 
 See the [LICENSE](./LICENSE) file for details.
 
-## 📚 Documentation
+## Documentation
 
-- 📖 [Documentation](https://enumura1.github.io/chatbot-flow-editor/)
-- 🚀 [Getting Started](https://enumura1.github.io/chatbot-flow-editor/docs/getting-started)
-- 💾 [Installation Guide](https://enumura1.github.io/chatbot-flow-editor/docs/installation)
-- 📋 [User Guide](https://enumura1.github.io/chatbot-flow-editor/docs/user-guide)
-- 🔧 [JSON Structure](https://enumura1.github.io/chatbot-flow-editor/docs/json-structure)
+- [Documentation](https://enumura1.github.io/chatbot-flow-editor/)
+- [Getting Started](https://enumura1.github.io/chatbot-flow-editor/docs/getting-started)
+- [Installation Guide](https://enumura1.github.io/chatbot-flow-editor/docs/installation)
+- [User Guide](https://enumura1.github.io/chatbot-flow-editor/docs/user-guide)
+- [JSON Structure](https://enumura1.github.io/chatbot-flow-editor/docs/json-structure)
 
 ## Support
 
-- 🐛 [Report Issues](https://github.com/enumura1/chatbot-flow-editor/issues)
-- 💬 [Discussions](https://github.com/enumura1/chatbot-flow-editor/discussions)
+- [Report Issues](https://github.com/enumura1/chatbot-flow-editor/issues)
+- [Discussions](https://github.com/enumura1/chatbot-flow-editor/discussions)
 
 ---

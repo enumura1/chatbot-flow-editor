@@ -122,14 +122,14 @@ chatbot-flow-editor version  # Show version number
 After running any installation method, you should see:
 
 1. Console output showing the server is starting
-2. Your browser automatically opening to `http://localhost:4001`
+2. Your browser automatically opening to `http://localhost:3001`
 3. The Chatbot Flow Editor interface loading
 
 Example output:
 ```
 Starting Chatbot Flow Editor...
-Local:    http://localhost:4001
-Network:  http://192.168.1.100:4001
+Local:    http://localhost:3001
+Network:  http://192.168.1.100:3001
 
 Ready! Open your browser to start designing flows.
 ```
@@ -137,14 +137,14 @@ Ready! Open your browser to start designing flows.
 ## Troubleshooting
 
 ### Port Already in Use
-If port 4001 is already in use:
+If port 3001 is already in use:
 
 ```bash
 # Try a different port
 PORT=4002 chatbot-flow-editor
 
-# Or kill the process using port 4001
-lsof -ti:4001 | xargs kill -9
+# Or kill the process using port 3001
+lsof -ti:3001 | xargs kill -9
 ```
 
 ### Node.js Version Issues
@@ -174,7 +174,7 @@ export PATH=~/.npm-global/bin:$PATH
 If the browser doesn't open automatically:
 
 1. Manually open your browser
-2. Navigate to `http://localhost:4001`
+2. Navigate to `http://localhost:3001`
 3. Check console output for the correct URL
 
 ### Clear npm Cache

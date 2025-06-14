@@ -10,10 +10,7 @@
   "main": "./dist/index.js",
   "files": [
     "dist",
-    "bin",
-    "src",
-    "index.html",
-    "vite.config.ts"
+    "bin"
   ],
   "scripts": {
     "editor": "vite --port 4001 --open",

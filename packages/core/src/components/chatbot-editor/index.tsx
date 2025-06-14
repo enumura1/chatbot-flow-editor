@@ -27,21 +27,21 @@ const initialFlow: ChatbotFlow = [
   },
   {
     id: 2,
-    title: "Node 2 content",
+    title: "Node 1 title",
     options: [],
     parentId: 1,
     hierarchyPath: "1-1"
   },
   {
     id: 3,
-    title: "Node 3 content",
+    title: "Node 2 title",
     options: [],
     parentId: 1,
     hierarchyPath: "1-2"
   },
   {
     id: 4,
-    title: "Node 4 content",
+    title: "Node 3 title",
     options: [],
     parentId: 1,
     hierarchyPath: "1-3"

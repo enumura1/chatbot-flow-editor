@@ -10,6 +10,8 @@ apps/
 vite.config.ts
 tsconfig.json
 tsconfig.*.json
+index.html
+src/main.tsx
 
 # Source files (since we ship dist/)
 src/

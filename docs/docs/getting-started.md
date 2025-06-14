@@ -38,7 +38,7 @@ npm install --save-dev chatbot-flow-editor
 npx chatbot-flow-editor
 ```
 
-Your browser will automatically open at `http://localhost:4001` with the visual flow editor.
+Your browser will automatically open at `http://localhost:3001` with the visual flow editor.
 
 ## Your First Flow
 

@@ -13,12 +13,12 @@
     "bin"
   ],
   "scripts": {
-    "editor": "vite --port 4001 --open",
-    "flow-editor": "vite --port 4001 --open",
-    "chatbot": "vite --port 4001 --open",
+    "editor": "vite --port 3001 --open",
+    "flow-editor": "vite --port 3001 --open",
+    "chatbot": "vite --port 3001 --open",
     "build": "vite build",
-    "dev": "vite --port 4001 --open",
-    "preview": "vite preview --port 4001",
+    "dev": "vite --port 3001 --open",
+    "preview": "vite preview --port 3001",
     "type-check": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run"

@@ -160,7 +160,7 @@ const config: Config = {
             },
             {
               label: 'Development',
-              to: '/docs/Development',
+              to: '/docs/development',
             },
           ],
         },

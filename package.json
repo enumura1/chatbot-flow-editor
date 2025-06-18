@@ -10,9 +10,10 @@
   ],
   "scripts": {
     "build": "npm run build --workspace=packages/core",
-    "dev": "npm run dev --workspace=apps/demo",
+    "dev": "npm run dev --workspace=packages/core",
     "build:core": "npm run build --workspace=packages/core",
-    "dev:demo": "npm run dev --workspace=apps/demo",
+    "dev:demo": "npm run dev --workspace=apps/editor-demo",
+    "dev:samples": "npm run dev --workspace=apps/chatbot-samples",
     "docs:start": "npm run start --workspace=docs",
     "docs:build": "npm run build --workspace=docs",
     "docs:deploy": "npm run deploy --workspace=docs"

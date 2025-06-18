@@ -1,5 +1,5 @@
 {
-  "name": "@chatbot-flow-editor/demo",
+  "name": "@chatbot-flow-editor/editor-demo",
   "version": "1.0.0",
   "description": "Demo application for chatbot flow editor",
   "type": "module",

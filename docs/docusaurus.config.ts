@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -32,8 +32,16 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ja', // 日本語をデフォルトに
+    locales: ['ja', 'en'],
+    localeConfigs: {
+      ja: {
+        htmlLang: 'ja',
+      },
+      en: {
+        htmlLang: 'en',
+      },
+    },
   },
 
   presets: [
@@ -57,8 +65,8 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/chatbot-flow-editor-social-card.webp',
     metadata: [
-      {name: 'og:type', content: 'website'},
-      {name: 'og:site_name', content: 'Chatbot Flow Editor'}
+      { name: 'og:type', content: 'website' },
+      { name: 'og:site_name', content: 'Chatbot Flow Editor' }
     ],
     // banner
     announcementBar: {
@@ -102,6 +110,10 @@ const config: Config = {
               label: 'User Guide',
               to: '/docs/user-guide',
             },
+            {
+              label: 'Development',
+              to: '/docs/development',
+            },
           ],
         },
         {
@@ -123,7 +135,7 @@ const config: Config = {
         },
       ],
     },
-    
+
     footer: {
       style: 'dark',
       links: [
@@ -145,6 +157,10 @@ const config: Config = {
             {
               label: 'JSON Structure',
               to: '/docs/json-structure',
+            },
+            {
+              label: 'Development',
+              to: '/docs/Development',
             },
           ],
         },
@@ -181,7 +197,7 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} enumura1. Built with Docusaurus.`,
     },
-    
+
     prism: {
       theme: prismThemes.github,
       additionalLanguages: ['bash', 'json', 'javascript', 'typescript'],

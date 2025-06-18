@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -16,9 +16,10 @@ const sidebars: SidebarsConfig = {
   // Manually defined sidebar for better control
   tutorialSidebar: [
     'getting-started',
-    'installation', 
+    'installation',
     'user-guide',
     'json-structure',
+    'development',
   ],
 
   // You can also use auto-generated sidebar if preferred

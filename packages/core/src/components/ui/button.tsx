@@ -46,12 +46,12 @@ function Button({
   
   const buttonClassName = cn(buttonVariants({ variant, size, className }))
   
-  // render prop が提供された場合はそれを使用
+  // Use render prop if provided
   if (render) {
     return render({ className: buttonClassName })
   }
   
-  // 通常のボタン
+  // Regular button
   return (
     <button
       data-slot="button"

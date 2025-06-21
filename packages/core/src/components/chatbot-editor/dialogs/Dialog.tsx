@@ -8,25 +8,25 @@ interface SimpleDialogProps {
   footer?: React.ReactNode
 }
 
-// シンプルで実用的なDialog - 依存関係ゼロ
+// Simple and practical Dialog - zero dependencies
 export default function SimpleDialog({ open, onClose, title, children, footer }: SimpleDialogProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!open) return
     
-    // ESCキーで閉じる
+    // Close with ESC key
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
     
-    // 背景スクロール防止 & フォーカス管理
+    // Prevent background scrolling & focus management
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     document.addEventListener('keydown', handleEsc)
     dialogRef.current?.focus()
     
-    // クリーンアップ
+    // Cleanup
     return () => {
       document.body.style.overflow = previousOverflow
       document.removeEventListener('keydown', handleEsc)

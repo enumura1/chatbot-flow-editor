@@ -38,6 +38,10 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
+      treeshake: {
+        preset: 'recommended',
+        moduleSideEffects: false,
+      },
       output: {
         globals: {
           react: 'React',
@@ -45,16 +49,27 @@ export default defineConfig({
         },
         manualChunks: {
           'ui-components': ['@radix-ui/react-scroll-area'],
-          'utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
+          'utils': ['clsx', 'class-variance-authority'],
         },
+        // Better chunk naming for caching
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
+    // Target modern browsers for smaller bundles
+    target: 'es2020',
     cssCodeSplit: false,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.warn'],
+        passes: 2,
+      },
+      mangle: {
+        safari10: true,
       },
     },
   },

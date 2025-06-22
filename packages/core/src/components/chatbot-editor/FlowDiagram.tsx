@@ -63,8 +63,6 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
   const renderNode = (item: TreeNode): React.ReactElement => {
     const { node, depth, children } = item;
 
-    // Debug log to check hierarchyPath
-    console.log(`FlowDiagram renderNode - Node ID: ${node.id}, hierarchyPath: ${node.hierarchyPath}`);
 
     return (
       <div key={node.id} className="flex flex-col mb-8">

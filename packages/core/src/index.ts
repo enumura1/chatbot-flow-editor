@@ -6,7 +6,7 @@ export { default as ChatbotEditor } from './components/chatbot-editor'
 
 // UI components
 export { Button } from './components/ui/button'
-export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './components/ui/card'
+export { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 export { Input } from './components/ui/input'
 export { ScrollArea } from './components/ui/scroll-area'
 

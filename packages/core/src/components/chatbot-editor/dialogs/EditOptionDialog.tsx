@@ -46,16 +46,19 @@ const EditOptionDialog: React.FC<EditOptionDialogProps> = ({
       return;
     }
     
-    const targetNodeId = parseInt(nextNodeId);
+    // Check if it's a numeric ID or hierarchyPath
+    const targetNode = flow.find(node => 
+      node.id.toString() === nextNodeId || 
+      node.hierarchyPath === nextNodeId
+    );
     
-    // Check if target node exists
-    if (!flow.some(node => node.id === targetNodeId)) {
+    if (!targetNode) {
       setError('The specified node ID does not exist');
       return;
     }
     
     // All validations passed
-    onSaveOption(optionLabel, targetNodeId);
+    onSaveOption(optionLabel, targetNode.id);
     setError(null);
   };
   
@@ -104,14 +107,11 @@ const EditOptionDialog: React.FC<EditOptionDialogProps> = ({
           <div className="flex space-x-2">
             <input
               className="w-full px-3 py-2 border rounded-md"
-              type="number"
+              type="text"
               value={nextNodeId}
               onChange={(e) => setNextNodeId(e.target.value)}
-              placeholder="Enter ID of the next node to display"
+              placeholder="Enter ID of the next node to display (e.g., 1-1-1)"
             />
-          </div>
-          <div className="text-sm text-gray-500">
-            Available IDs: {flow.map(n => n.id).join(', ')}
           </div>
         </div>
       </div>

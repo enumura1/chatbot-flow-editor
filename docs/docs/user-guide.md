@@ -14,6 +14,8 @@ The Chatbot Flow Editor interface consists of three main areas:
 - **Visual Flow Tree**: Hierarchical view of your conversation flow
 - **Node Navigation**: Click any node to select and edit it
 - **Flow Structure**: See the complete conversation tree at a glance
+- **Pan Navigation**: Click and drag empty space to move around large flows
+- **Scroll Support**: Use horizontal scrolling for wide conversation trees
 
 ### Right Panel: Split View (40%)
 - **Top Half**: Live chat preview for testing flows

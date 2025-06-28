@@ -6,6 +6,8 @@ interface FlowDiagramProps {
   nodePositions: NodePositions;
   currentNodeId: number;
   onNodeSelect: (nodeId: number) => void;
+  onDeleteNode?: (nodeId: number) => void;
+  onAddNode?: (parentId: number) => void;
 }
 
 // Hierarchy tree node interface
@@ -19,7 +21,9 @@ interface TreeNode {
 const FlowDiagram: React.FC<FlowDiagramProps> = ({
   flow,
   currentNodeId,
-  onNodeSelect
+  onNodeSelect,
+  onDeleteNode,
+  onAddNode
 }) => {
   // Build hierarchy structure
   const buildHierarchy = (): TreeNode | null => {
@@ -79,20 +83,53 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
 
           {/* Node */}
           <div
-            className={`px-5 py-3 rounded-lg shadow-md cursor-pointer border-2
+            className={`relative px-5 py-3 rounded-lg shadow-md cursor-pointer border-2
               ${currentNodeId === node.id
                 ? 'bg-blue-50 border-blue-600 ring-2 ring-blue-200'
                 : 'bg-white border-gray-300'}`}
             style={{ minWidth: '240px' }}
             onClick={() => onNodeSelect(node.id)}
           >
+            {/* Action buttons for selected node */}
+            {currentNodeId === node.id && (
+              <div className="absolute top-2 right-2 flex gap-1">
+                {/* Add node button */}
+                {onAddNode && (
+                  <button
+                    className="w-6 h-6 bg-green-50 hover:bg-green-100 border border-green-200 text-green-700 hover:text-green-800 rounded flex items-center justify-center text-xs transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onAddNode(node.id);
+                    }}
+                    title="Add child node"
+                  >
+                    +
+                  </button>
+                )}
+                
+                {/* Delete button (except root node) */}
+                {node.id !== 1 && onDeleteNode && (
+                  <button
+                    className="w-6 h-6 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 hover:text-red-800 rounded flex items-center justify-center text-xs transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDeleteNode(node.id);
+                    }}
+                    title="Delete node"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+            )}
+
             {/* Node ID - display hierarchyPath if available, otherwise fallback to node.id */}
             <div className="text-xs font-medium text-gray-600 mb-1">
               Node {node.hierarchyPath || node.id}
             </div>
 
             {/* Node title - larger, more prominent */}
-            <div className="text-base font-bold text-gray-900 mb-2 truncate">{node.title}</div>
+            <div className="text-base font-bold text-gray-900 mb-2 truncate pr-8">{node.title}</div>
 
             {/* Options - improved visibility */}
             {node.options.length > 0 && (

@@ -12,6 +12,7 @@ const AddNodeDialog = lazy(() => import('./dialogs/AddNodeDialog'));
 const EditOptionDialog = lazy(() => import('./dialogs/EditOptionDialog'));
 const ImportDialog = lazy(() => import('./dialogs/ImportDialog'));
 const ExportDialog = lazy(() => import('./dialogs/ExportDialog'));
+const DeleteNodeDialog = lazy(() => import('./dialogs/DeleteNodeDialog'));
 
 // Initial flow data
 const initialFlow: ChatbotFlow = [
@@ -54,6 +55,7 @@ type DialogState = {
   addOption: boolean;
   import: boolean;
   export: boolean;
+  deleteNode: boolean;
 };
 
 export default function ChatbotEditor() {
@@ -70,9 +72,11 @@ export default function ChatbotEditor() {
     addNode: false,
     addOption: false,
     import: false,
-    export: false
+    export: false,
+    deleteNode: false
   });
   const [editingOptionIndex, setEditingOptionIndex] = useState<number | null>(null);
+  const [nodeToDelete, setNodeToDelete] = useState<number | null>(null);
   
   // Get currently selected node - memoized to prevent recalculation
   const currentNode = useMemo((): ChatNode => {
@@ -96,6 +100,12 @@ export default function ChatbotEditor() {
     setCurrentNodeId(nodeId);
   }, []);
   
+  // Handle opening add node dialog with specific parent
+  const handleOpenAddNode = useCallback((parentId: number) => {
+    setCurrentNodeId(parentId);
+    toggleDialog('addNode', true);
+  }, [toggleDialog]);
+
   // Node addition handler
   const handleAddNode = useCallback((title: string) => {
     setFlow(prevFlow => {
@@ -208,6 +218,42 @@ export default function ChatbotEditor() {
       return node;
     }));
   }, [currentNodeId]);
+
+  // Node deletion confirmation handler
+  const handleDeleteNode = useCallback((nodeId: number) => {
+    // Prevent deleting the root node
+    if (nodeId === 1) {
+      return;
+    }
+
+    setNodeToDelete(nodeId);
+    toggleDialog('deleteNode', true);
+  }, [toggleDialog]);
+
+  // Actual node deletion handler
+  const handleConfirmDeleteNode = useCallback(() => {
+    if (!nodeToDelete) return;
+
+    setFlow(prevFlow => {
+      // Remove the node from the flow
+      const updatedFlow = prevFlow.filter(node => node.id !== nodeToDelete);
+      
+      // Find and remove any options that point to the deleted node
+      const cleanedFlow = updatedFlow.map(node => ({
+        ...node,
+        options: node.options.filter(option => option.nextId !== nodeToDelete)
+      }));
+      
+      // If the deleted node was currently selected, select the root node
+      if (currentNodeId === nodeToDelete) {
+        setCurrentNodeId(1);
+      }
+      
+      return cleanedFlow;
+    });
+
+    setNodeToDelete(null);
+  }, [nodeToDelete, currentNodeId]);
   
   // Import handler
   const handleImport = useCallback((importedFlow: ChatbotFlow) => {
@@ -242,13 +288,6 @@ export default function ChatbotEditor() {
               <div className="flex space-x-2">
                 <Button 
                   variant="outline"
-                  className="bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-800 px-4 py-2 h-auto text-sm font-medium"
-                  onClick={() => toggleDialog('addNode', true)}
-                >
-                  Add Node
-                </Button>
-                <Button 
-                  variant="outline"
                   className="bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-800 px-4 py-1 h-auto text-sm font-medium"
                   onClick={() => toggleDialog('export', true)}
                 >
@@ -271,6 +310,8 @@ export default function ChatbotEditor() {
               nodePositions={nodePositions}
               currentNodeId={currentNodeId}
               onNodeSelect={handleNodeSelect}
+              onDeleteNode={handleDeleteNode}
+              onAddNode={handleOpenAddNode}
             />
           </CardContent>
         </Card>
@@ -336,6 +377,19 @@ export default function ChatbotEditor() {
           onClose={() => toggleDialog('export', false)}
           flow={flow}
           onExport={handleExport}
+        />
+      )}
+
+      {dialogState.deleteNode && nodeToDelete && (
+        <DeleteNodeDialog 
+          open={dialogState.deleteNode}
+          onClose={() => {
+            toggleDialog('deleteNode', false);
+            setNodeToDelete(null);
+          }}
+          onConfirm={handleConfirmDeleteNode}
+          nodeTitle={flow.find(n => n.id === nodeToDelete)?.title || ''}
+          nodeId={nodeToDelete}
         />
       )}
     </div>

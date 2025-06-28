@@ -7,8 +7,8 @@ describe('ChatbotEditor - Dialog Operations', () => {
     const user = userEvent.setup()
     render(<ChatbotEditor />)
     
-    // Click Add Node button
-    const addButton = screen.getByText('Add Node')
+    // Click the + button on the root node (should be visible by default)
+    const addButton = screen.getByTitle('Add child node')
     await user.click(addButton)
     
     // Wait for dialog to appear
@@ -34,8 +34,8 @@ describe('ChatbotEditor - Dialog Operations', () => {
     const user = userEvent.setup()
     render(<ChatbotEditor />)
     
-    // Click Add Node button
-    const addButton = screen.getByText('Add Node')
+    // Click the + button on the root node
+    const addButton = screen.getByTitle('Add child node')
     await user.click(addButton)
     
     // Click Cancel button

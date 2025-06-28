@@ -1,6 +1,6 @@
 {
   "name": "chatbot-flow-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Visual chatbot flow editor - Development tool for creating conversational flows",
   "funding": "https://github.com/sponsors/enumura1",
   "type": "module",
@@ -10,7 +10,8 @@
   "main": "./dist/index.js",
   "files": [
     "dist",
-    "bin"
+    "bin",
+    "README.md"
   ],
   "scripts": {
     "editor": "vite --port 3001 --open",
@@ -61,11 +62,7 @@
   "keywords": [
     "chatbot",
     "flow-editor",
-    "development-tool",
-    "visual-editor",
-    "conversational-ai",
-    "no-code",
-    "low-code"
+    "development-tool"
   ],
   "author": {
     "name": "enumura1"
@@ -78,7 +75,7 @@
   "bugs": {
     "url": "https://github.com/enumura1/chatbot-flow-editor/issues"
   },
-  "homepage": "https://github.com/enumura1/chatbot-flow-editor#readme",
+  "homepage": "https://enumura1.github.io/chatbot-flow-editor/",
   "engines": {
     "node": ">=20.0.0"
   }

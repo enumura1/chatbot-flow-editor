@@ -100,6 +100,12 @@ export default function ChatbotEditor() {
     setCurrentNodeId(nodeId);
   }, []);
   
+  // Handle opening add node dialog with specific parent
+  const handleOpenAddNode = useCallback((parentId: number) => {
+    setCurrentNodeId(parentId);
+    toggleDialog('addNode', true);
+  }, [toggleDialog]);
+
   // Node addition handler
   const handleAddNode = useCallback((title: string) => {
     setFlow(prevFlow => {
@@ -282,13 +288,6 @@ export default function ChatbotEditor() {
               <div className="flex space-x-2">
                 <Button 
                   variant="outline"
-                  className="bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-800 px-4 py-2 h-auto text-sm font-medium"
-                  onClick={() => toggleDialog('addNode', true)}
-                >
-                  Add Node
-                </Button>
-                <Button 
-                  variant="outline"
                   className="bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-800 px-4 py-1 h-auto text-sm font-medium"
                   onClick={() => toggleDialog('export', true)}
                 >
@@ -312,6 +311,7 @@ export default function ChatbotEditor() {
               currentNodeId={currentNodeId}
               onNodeSelect={handleNodeSelect}
               onDeleteNode={handleDeleteNode}
+              onAddNode={handleOpenAddNode}
             />
           </CardContent>
         </Card>

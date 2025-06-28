@@ -26,8 +26,8 @@ npm run dev:demo  # Demo app development
 ```
 chatbot-flow-editor/
 ├── packages/core/          # Main package (library)
-├── apps/demo/              # Demo application  
-├── apps/examples/          # Usage examples
+├── apps/editor-demo/       # flow editor Demo  
+├── apps/chatbot-samples/   # chatbot examples
 ├── docs/                   # Documentation site
 └── README.md
 ```

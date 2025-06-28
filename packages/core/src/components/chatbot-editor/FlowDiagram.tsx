@@ -1,5 +1,6 @@
 import { ChatbotFlow, ChatNode, NodePositions } from '../../types/chatbot';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { useState, useRef, useCallback } from 'react';
 
 interface FlowDiagramProps {
   flow: ChatbotFlow;
@@ -25,6 +26,48 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
   onDeleteNode,
   onAddNode
 }) => {
+  // Pan operation state
+  const [isPanning, setIsPanning] = useState(false);
+  const [lastPanPoint, setLastPanPoint] = useState({ x: 0, y: 0 });
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
+  
+  // Pan operation handlers
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    
+    // Check if clicked on a node (element with cursor-pointer class or its children)
+    const isNodeClick = target.closest('.cursor-pointer') !== null;
+    
+    if (!isNodeClick) {
+      setIsPanning(true);
+      setLastPanPoint({ x: e.clientX, y: e.clientY });
+      e.preventDefault();
+    }
+  }, []);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isPanning || !scrollAreaRef.current) return;
+
+    const deltaX = e.clientX - lastPanPoint.x;
+    const deltaY = e.clientY - lastPanPoint.y;
+
+    const viewport = scrollAreaRef.current.querySelector('[data-slot="scroll-area-viewport"]') as HTMLElement;
+    if (viewport) {
+      viewport.scrollLeft -= deltaX;
+      viewport.scrollTop -= deltaY;
+    }
+
+    setLastPanPoint({ x: e.clientX, y: e.clientY });
+  }, [isPanning, lastPanPoint]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsPanning(false);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsPanning(false);
+  }, []);
+
   // Build hierarchy structure
   const buildHierarchy = (): TreeNode | null => {
     const rootNode = flow.find(node => node.id === 1);
@@ -66,6 +109,12 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
   // Recursively render node from hierarchy
   const renderNode = (item: TreeNode): React.ReactElement => {
     const { node, depth, children } = item;
+    
+    // Calculate dynamic width based on content length
+    const nodeDisplayId = node.hierarchyPath || node.id;
+    const titleLength = node.title.length;
+    const idLength = nodeDisplayId.toString().length;
+    const minWidth = Math.max(240, (titleLength + idLength) * 8 + 100);
 
 
     return (
@@ -87,7 +136,7 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
               ${currentNodeId === node.id
                 ? 'bg-blue-50 border-blue-600 ring-2 ring-blue-200'
                 : 'bg-white border-gray-300'}`}
-            style={{ minWidth: '240px' }}
+            style={{ minWidth: `${minWidth}px` }}
             onClick={() => onNodeSelect(node.id)}
           >
             {/* Action buttons for selected node */}
@@ -124,12 +173,12 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
             )}
 
             {/* Node ID - display hierarchyPath if available, otherwise fallback to node.id */}
-            <div className="text-xs font-medium text-gray-600 mb-1">
+            <div className="text-xs font-medium text-gray-600 mb-1 pr-8">
               Node {node.hierarchyPath || node.id}
             </div>
 
             {/* Node title - larger, more prominent */}
-            <div className="text-base font-bold text-gray-900 mb-2 truncate pr-8">{node.title}</div>
+            <div className="text-base font-bold text-gray-900 mb-2 pr-8 break-words">{node.title}</div>
 
             {/* Options - improved visibility */}
             {node.options.length > 0 && (
@@ -142,8 +191,8 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
                   return (
                     <div key={optIdx} className="flex items-center py-1.5">
                       <span className="mr-2 text-blue-600 font-bold">•</span>
-                      <span className="truncate font-medium flex-1">{option.label}</span>
-                      <span className="text-xs bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded ml-2 whitespace-nowrap">→ Node {targetDisplay}</span>
+                      <span className="font-medium flex-1 break-words">{option.label}</span>
+                      <span className="text-xs bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded ml-2 break-all">→ Node {targetDisplay}</span>
                     </div>
                   );
                 })}
@@ -164,10 +213,21 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
   const hierarchy = buildHierarchy();
 
   return (
-    <ScrollArea className="h-full w-full">
-      <div className="p-6">
+    <ScrollArea 
+      ref={scrollAreaRef}
+      className="h-full w-full"
+    >
+      <div 
+        className={`p-6 min-w-max ${isPanning ? 'cursor-grabbing' : 'cursor-grab'}`}
+        data-pannable="true"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+      >
         {hierarchy && renderNode(hierarchy)}
       </div>
+      <ScrollBar orientation="horizontal" />
     </ScrollArea>
   );
 };

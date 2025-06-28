@@ -7,9 +7,9 @@ describe('ChatbotEditor - Basic Functionality', () => {
     expect(screen.getByText('Workflow Editor')).toBeInTheDocument()
   })
 
-  test('shows Add Node button', () => {
+  test('shows inline add node button', () => {
     render(<ChatbotEditor />)
-    expect(screen.getByText('Add Node')).toBeInTheDocument()
+    expect(screen.getByTitle('Add child node')).toBeInTheDocument()
   })
 
   test('shows Export and Import buttons', () => {

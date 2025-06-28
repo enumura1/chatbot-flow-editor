@@ -79,7 +79,7 @@ When you export a flow, you'll receive a JSON structure like this:
 Use this JSON structure in your chatbot implementation:
 
 ```javascript
-const flow = require('./exported-flow.json');
+import flow from './exported-flow.json';
 
 function processUserInput(currentNodeId, userChoice) {
   const currentNode = flow.find(node => node.id === currentNodeId);

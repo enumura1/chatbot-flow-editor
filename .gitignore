@@ -25,6 +25,9 @@ dist-ssr
 *.tgz
 *.tar.gz
 
+# npm pack output
+**/package/
+
 # tool
 createOGP.html
 

@@ -17,7 +17,7 @@ node --version
 # Should output v20.0.0 or higher
 ```
 
-## Method 1: npx (Recommended)
+## Method 1: npx
 
 The fastest way to get started. No installation required:
 

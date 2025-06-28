@@ -6,6 +6,7 @@ interface FlowDiagramProps {
   nodePositions: NodePositions;
   currentNodeId: number;
   onNodeSelect: (nodeId: number) => void;
+  onDeleteNode?: (nodeId: number) => void;
 }
 
 // Hierarchy tree node interface
@@ -19,7 +20,8 @@ interface TreeNode {
 const FlowDiagram: React.FC<FlowDiagramProps> = ({
   flow,
   currentNodeId,
-  onNodeSelect
+  onNodeSelect,
+  onDeleteNode
 }) => {
   // Build hierarchy structure
   const buildHierarchy = (): TreeNode | null => {
@@ -79,20 +81,34 @@ const FlowDiagram: React.FC<FlowDiagramProps> = ({
 
           {/* Node */}
           <div
-            className={`px-5 py-3 rounded-lg shadow-md cursor-pointer border-2
+            className={`relative px-5 py-3 rounded-lg shadow-md cursor-pointer border-2
               ${currentNodeId === node.id
                 ? 'bg-blue-50 border-blue-600 ring-2 ring-blue-200'
                 : 'bg-white border-gray-300'}`}
             style={{ minWidth: '240px' }}
             onClick={() => onNodeSelect(node.id)}
           >
+            {/* Delete button for selected node (except root node) */}
+            {currentNodeId === node.id && node.id !== 1 && onDeleteNode && (
+              <button
+                className="absolute top-2 right-2 w-6 h-6 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-600 hover:text-gray-800 rounded flex items-center justify-center text-xs transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onDeleteNode(node.id);
+                }}
+                title="Delete node"
+              >
+                ×
+              </button>
+            )}
+
             {/* Node ID - display hierarchyPath if available, otherwise fallback to node.id */}
             <div className="text-xs font-medium text-gray-600 mb-1">
               Node {node.hierarchyPath || node.id}
             </div>
 
             {/* Node title - larger, more prominent */}
-            <div className="text-base font-bold text-gray-900 mb-2 truncate">{node.title}</div>
+            <div className="text-base font-bold text-gray-900 mb-2 truncate pr-8">{node.title}</div>
 
             {/* Options - improved visibility */}
             {node.options.length > 0 && (

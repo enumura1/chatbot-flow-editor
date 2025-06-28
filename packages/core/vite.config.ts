@@ -11,6 +11,8 @@ export default defineConfig({
     tailwindcss(),
     dts({
       insertTypesEntry: true,
+      exclude: ['src/__tests__/**/*', 'src/**/*.test.*'],
+      copyDtsFiles: false,
     }),
     ...(process.env.CI ? [] : [
       (async () => {
@@ -36,24 +38,20 @@ export default defineConfig({
       formats: ['es'],
       fileName: 'index',
     },
+    copyPublicDir: false,
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', '@radix-ui/react-scroll-area'],
       treeshake: {
         preset: 'recommended',
         moduleSideEffects: false,
       },
       output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
         manualChunks: {
-          'ui-components': ['@radix-ui/react-scroll-area'],
           'utils': ['clsx', 'class-variance-authority'],
         },
-        // Better chunk naming for caching
+        // Fixed entry name for package.json main field
         chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: '[name].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },

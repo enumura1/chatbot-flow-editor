@@ -18,7 +18,7 @@ Your browser will automatically open with the visual flow editor at `http://loca
 
 ## Installation & Usage
 
-### Method 1: Using npx (Recommended)
+### Method 1: Using npx
 ```bash
 npm install --save-dev chatbot-flow-editor
 npx chatbot-flow-editor

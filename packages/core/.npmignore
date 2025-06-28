@@ -33,3 +33,6 @@ Thumbs.db
 # Temporary
 *.tmp
 *.temp
+
+# Build analysis (dev only)
+dist/stats.html

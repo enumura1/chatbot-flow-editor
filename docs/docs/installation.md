@@ -72,49 +72,32 @@ npm run design-flows
 npm run chatbot-editor
 ```
 
-## Method 3: Global Installation
-
-Install globally to use from anywhere:
-
-```bash
-# Using npm
-npm install -g chatbot-flow-editor
-
-# Using yarn
-yarn global add chatbot-flow-editor
-```
-
-Then run from any directory:
-```bash
-chatbot-flow-editor
-```
-
-:::warning Global Installation
-Global installation may cause version conflicts. We recommend using npx or project-level installation instead.
-:::
-
 ## Command Options
 
 ### Basic Usage
 ```bash
-chatbot-flow-editor
+# For quick testing
+npx chatbot-flow-editor
+
+# If installed as dev dependency with scripts configured
+npm run design-flows
 ```
 
 ### Custom Port
 ```bash
 # Set custom port
-PORT=4000 chatbot-flow-editor
+PORT=4000 npx chatbot-flow-editor
 
 # Or use environment variable
 export PORT=4000
-chatbot-flow-editor
+npx chatbot-flow-editor
 ```
 
 ### Available Commands
 ```bash
-chatbot-flow-editor start    # Start the editor (default)
-chatbot-flow-editor help     # Show help information
-chatbot-flow-editor version  # Show version number
+npx chatbot-flow-editor          # Start the editor (for quick testing)
+npm run design-flows             # Start the editor (if configured in scripts)
+PORT=4000 npx chatbot-flow-editor  # Start with custom port
 ```
 
 ## Verify Installation
@@ -140,9 +123,6 @@ Ready! Open your browser to start designing flows.
 If port 3001 is already in use:
 
 ```bash
-# Try a different port
-PORT=4002 chatbot-flow-editor
-
 # Or kill the process using port 3001
 lsof -ti:3001 | xargs kill -9
 ```

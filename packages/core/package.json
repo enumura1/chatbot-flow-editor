@@ -1,6 +1,6 @@
 {
   "name": "chatbot-flow-editor",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Visual chatbot flow editor - Development tool for creating conversational flows",
   "funding": "https://github.com/sponsors/enumura1",
   "type": "module",

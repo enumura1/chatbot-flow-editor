@@ -126,4 +126,4 @@ src/
 
 - [User Documentation](https://enumura1.github.io/chatbot-flow-editor/)
 - [GitHub Repository](https://github.com/enumura1/chatbot-flow-editor)
-- [npm Package](https://www.npmjs.com/package/chatbot-flow-editor)
+- [npm Package](https://www.npmjs.com/package/@enumura/chatbot-flow-editor)

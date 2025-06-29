@@ -123,7 +123,7 @@ const config: Config = {
           items: [
             {
               label: 'npm Package',
-              href: 'https://www.npmjs.com/package/chatbot-flow-editor',
+              href: 'https://www.npmjs.com/package/@enumura/chatbot-flow-editor',
             },
           ],
         },
@@ -186,7 +186,7 @@ const config: Config = {
             },
             {
               label: 'npm',
-              href: 'https://www.npmjs.com/package/chatbot-flow-editor',
+              href: 'https://www.npmjs.com/package/@enumura/chatbot-flow-editor',
             },
             {
               label: 'Changelog',

@@ -185,19 +185,19 @@ npm run dev
 ### Remove Development Dependency
 ```bash
 # Using npm
-npm uninstall chatbot-flow-editor
+npm uninstall @enumura/chatbot-flow-editor
 
 # Using yarn
-yarn remove chatbot-flow-editor
+yarn remove @enumura/chatbot-flow-editor
 ```
 
 ### Remove Global Installation
 ```bash
 # Using npm
-npm uninstall -g chatbot-flow-editor
+npm uninstall -g @enumura/chatbot-flow-editor
 
 # Using yarn
-yarn global remove chatbot-flow-editor
+yarn global remove @enumura/chatbot-flow-editor
 ```
 
 ## Next Steps

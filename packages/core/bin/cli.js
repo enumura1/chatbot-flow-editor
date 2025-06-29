@@ -6,7 +6,7 @@ import { dirname, join } from 'path'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const packageRoot = join(__dirname, '..')
 
-const vite = spawn('npx', ['vite', '--port', '3001', '--open'], {
+const vite = spawn('npx', ['vite', '--config', 'vite.cli.config.ts', '--port', '3001', '--open'], {
   cwd: packageRoot,
   stdio: 'inherit'
 })

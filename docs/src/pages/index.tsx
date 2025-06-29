@@ -14,7 +14,7 @@ function HomepageHeader() {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText('npx chatbot-flow-editor');
+      await navigator.clipboard.writeText('npx @enumura/chatbot-flow-editor');
       setIsCopied(true);
       // Display end
       setTimeout(() => {
@@ -40,7 +40,7 @@ function HomepageHeader() {
             <div className={styles.quickStart}>
               <div className={styles.installCommand}>
                 <span className={styles.commandPrefix}>$</span>
-                <code>npx chatbot-flow-editor</code>
+                <code>npx @enumura/chatbot-flow-editor</code>
                 <button
                   className={clsx(styles.copyButton, {
                     [styles.copied]: isCopied

@@ -8,10 +8,10 @@ A GUI tool that opens in your browser. Design, test, and export chatbot conversa
 
 ```bash
 # Install as development dependency
-npm install --save-dev chatbot-flow-editor
+npm install --save-dev @enumura/chatbot-flow-editor
 
 # Launch the visual editor
-npx chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 ```
 
 Your browser will automatically open with the visual flow editor at `http://localhost:3001`.
@@ -20,8 +20,8 @@ Your browser will automatically open with the visual flow editor at `http://loca
 
 ### Method 1: Using npx
 ```bash
-npm install --save-dev chatbot-flow-editor
-npx chatbot-flow-editor
+npm install --save-dev @enumura/chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 ```
 
 ### Method 2: Add to your project scripts
@@ -41,7 +41,7 @@ npm run design-flows
 
 ### Method 3: Global installation
 ```bash
-npm install -g chatbot-flow-editor
+npm install -g @enumura/chatbot-flow-editor
 chatbot-flow-editor
 ```
 
@@ -65,7 +65,7 @@ chatbot-flow-editor version  # Show version
 
 ## How to Use
 
-1. **Launch**: Run `npx chatbot-flow-editor`
+1. **Launch**: Run `npx @enumura/chatbot-flow-editor`
 2. **Create Nodes**: Click "Add Node" to create conversation points
 3. **Edit Content**: Click any node to modify its content and options
 4. **Test Flow**: Use the chat preview to simulate user interactions
@@ -76,10 +76,10 @@ chatbot-flow-editor version  # Show version
 
 ```bash
 # In your chatbot project directory
-npm install --save-dev chatbot-flow-editor
+npm install --save-dev @enumura/chatbot-flow-editor
 
 # Design your conversation flows
-npx chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 
 # Export the flow as JSON
 # → Use the exported JSON in your chatbot application

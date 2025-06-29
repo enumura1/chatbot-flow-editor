@@ -22,7 +22,7 @@ node --version
 The fastest way to get started. No installation required:
 
 ```bash
-npx chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 ```
 
 This command:
@@ -37,16 +37,16 @@ Install as a development dependency in your project:
 
 ```bash
 # Using npm
-npm install --save-dev chatbot-flow-editor
+npm install --save-dev @enumura/chatbot-flow-editor
 
 # Using yarn
-yarn add --dev chatbot-flow-editor
+yarn add --dev @enumura/chatbot-flow-editor
 ```
 
 Then run:
 ```bash
 # Using npm
-npx chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 
 # Using yarn
 yarn chatbot-flow-editor
@@ -77,7 +77,7 @@ npm run chatbot-editor
 ### Basic Usage
 ```bash
 # For quick testing
-npx chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 
 # If installed as dev dependency with scripts configured
 npm run design-flows
@@ -86,18 +86,18 @@ npm run design-flows
 ### Custom Port
 ```bash
 # Set custom port
-PORT=4000 npx chatbot-flow-editor
+PORT=4000 npx @enumura/chatbot-flow-editor
 
 # Or use environment variable
 export PORT=4000
-npx chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 ```
 
 ### Available Commands
 ```bash
-npx chatbot-flow-editor          # Start the editor (for quick testing)
+npx @enumura/chatbot-flow-editor          # Start the editor (for quick testing)
 npm run design-flows             # Start the editor (if configured in scripts)
-PORT=4000 npx chatbot-flow-editor  # Start with custom port
+PORT=4000 npx @enumura/chatbot-flow-editor  # Start with custom port
 ```
 
 ## Verify Installation

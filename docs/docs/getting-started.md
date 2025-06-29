@@ -32,17 +32,17 @@ Get started in less than 2 minutes:
 
 ```bash
 # Install as dev dependency
-npm install --save-dev chatbot-flow-editor
+npm install --save-dev @enumura/chatbot-flow-editor
 
 # Launch the visual editor
-npx chatbot-flow-editor
+npx @enumura/chatbot-flow-editor
 ```
 
 Your browser will automatically open at `http://localhost:3001` with the visual flow editor.
 
 ## Your First Flow
 
-1. **Launch the Editor**: Run `npx chatbot-flow-editor`
+1. **Launch the Editor**: Run `npx @enumura/chatbot-flow-editor`
 2. **Create a Node**: Click "Add Node" to create your first conversation point
 3. **Edit Content**: Click the node to modify its message and add response options
 4. **Test the Flow**: Use the chat preview on the right to simulate conversations

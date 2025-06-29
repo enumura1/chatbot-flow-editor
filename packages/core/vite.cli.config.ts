@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // Vite configuration for CLI development server
 export default defineConfig({
+  root: resolve(__dirname, '.'),
   plugins: [
     react(),
     tailwindcss(),

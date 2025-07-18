@@ -277,6 +277,12 @@ export default function ChatbotEditor() {
     return null;
   }, [currentNode?.options, editingOptionIndex]);
   
+  // Helper function to get hierarchy path from nextId
+  const getHierarchyPathFromNextId = (nextId: number): string => {
+    const targetNode = flow.find(n => n.id === nextId);
+    return targetNode?.hierarchyPath || nextId.toString();
+  };
+  
   return (
     <div className="flex h-screen w-full bg-background text-foreground p-4 gap-4">
       {/* Left: Workflow diagram (60%) */}
@@ -331,6 +337,7 @@ export default function ChatbotEditor() {
         <div className="h-[calc(50%-8px)]">
           <NodeEditor 
             node={currentNode}
+            flow={flow}
             onUpdateNode={handleUpdateNode}
             onAddOption={handleOpenAddOption}
             onEditOption={handleEditOption}
@@ -357,7 +364,7 @@ export default function ChatbotEditor() {
           }}
           flow={flow}
           initialLabel={editingOption?.label || ''}
-          initialNextId={editingOption?.nextId.toString() || ''}
+          initialNextId={editingOption ? getHierarchyPathFromNextId(editingOption.nextId) : ''}
           isEditing={editingOptionIndex !== null}
           onSaveOption={handleSaveOption}
         />

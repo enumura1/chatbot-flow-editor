@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChatNode, ChatOption } from '../../types/chatbot';
+import { ChatNode, ChatOption, ChatbotFlow } from '../../types/chatbot';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface NodeEditorProps {
   node: ChatNode;
+  flow: ChatbotFlow;
   onUpdateNode: (title: string) => void;
   onAddOption: () => void;
   onEditOption: (index: number) => void;
@@ -15,6 +16,7 @@ interface NodeEditorProps {
 
 const NodeEditor: React.FC<NodeEditorProps> = ({
   node,
+  flow,
   onUpdateNode,
   onAddOption,
   onEditOption,
@@ -33,6 +35,15 @@ const NodeEditor: React.FC<NodeEditorProps> = ({
   
   const handleSave = () => {
     onUpdateNode(title);
+  };
+  
+  // Helper function to get node display name from nextId
+  const getNodeDisplayName = (nextId: number): string => {
+    const targetNode = flow.find(n => n.id === nextId);
+    if (targetNode?.hierarchyPath) {
+      return `Node${targetNode.hierarchyPath}`;
+    }
+    return `Node ${nextId}`;
   };
   
   return (
@@ -86,7 +97,7 @@ const NodeEditor: React.FC<NodeEditorProps> = ({
                   <div key={idx} className="flex items-center justify-between bg-gray-50 p-3 rounded-md border border-gray-100">
                     <div className="text-sm truncate mr-2 flex-1">
                       <span className="font-medium">{opt.label}</span>
-                      <span className="text-gray-500 text-xs ml-2">→ Node {opt.nextId}</span>
+                      <span className="text-gray-500 text-xs ml-2">→ {getNodeDisplayName(opt.nextId)}</span>
                     </div>
                     <div className="flex gap-2 shrink-0">
                       <Button 

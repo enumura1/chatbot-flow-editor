@@ -6,6 +6,12 @@ sidebar_position: 1
 
 Welcome to **Chatbot Flow Editor** - a visual development tool for designing chatbot conversation flows. This tool helps you create, test, and export chatbot flows as JSON for integration with any chatbot framework.
 
+## Introduction Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4wV240EaIPA?si=inZ6wGqkYxVzGsEC" title="Introduction to Chatbot Flow Editor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style={{borderRadius: '8px'}}></iframe>
+
+Watch this video to get a quick overview of how to use the Chatbot Flow Editor.
+
 ## What is Chatbot Flow Editor?
 
 Chatbot Flow Editor is a **GUI design tool**, not a complete chatbot solution. It provides:

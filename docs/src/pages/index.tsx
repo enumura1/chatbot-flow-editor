@@ -142,6 +142,37 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Video Tutorial Section */}
+        <section className={styles.videoSection}>
+          <div className="container">
+            <div className="text--center margin-bottom--xl">
+              <Heading as="h2" className={styles.sectionTitle}>
+                See It In Action
+              </Heading>
+              <p className={styles.sectionSubtitle}>
+                Watch this introduction to understand how Chatbot Flow Editor works
+              </p>
+            </div>
+            <div className="row">
+              <div className="col col--8 col--offset-2">
+                <div className={styles.videoContainer}>
+                  <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://www.youtube.com/embed/4wV240EaIPA?si=inZ6wGqkYxVzGsEC" 
+                    title="Introduction to Chatbot Flow Editor" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen
+                    style={{ borderRadius: '8px' }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* JSON Export Section */}
         <section className={styles.useCasesSection}>
           <div className="container">
